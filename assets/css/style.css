@@ -1,0 +1,211 @@
+body {
+    background-color: grey;
+}
+
+.wrapper {
+    width: 91%;
+    margin: 0 auto;
+}
+
+
+/* header */
+
+header {
+    background-color: #0F93C7;
+}
+
+header>div>img {
+    margin-left: 40px;
+    width: 200px;
+}
+
+header>nav>ul {
+    background-color: black;
+    text-align: center;
+    line-height: 30px;
+}
+
+header>nav>ul>li {
+    display: inline-block;
+    width: 12%;
+    text-align: center;
+    font-weight: bold;
+}
+
+header>nav>ul>li>a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
+
+header>nav>ul>li>a:hover {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(248, 206, 17, 0.8);
+}
+
+header>div>ul {
+    float: right;
+    margin: 45px 40px 0 0;
+}
+
+header>div>ul>li>img {
+    width: 21px;
+}
+
+header>div>ul>li {
+    display: list-item;
+    float: left;
+    font-weight: bolder;
+    font-size: 1.2em;
+    padding: 0 10px;
+    cursor: pointer;
+    border-right: 1px dashed white;
+    padding: 0 12px 1px;
+}
+
+header>div>ul>li:last-child {
+    border-right: none;
+}
+
+
+/* main */
+
+main {
+    background-color: #5A8ED1;
+}
+
+.left-top-news {
+    width: 40%;
+}
+
+.image-news {
+    width: 100%;
+}
+
+.on-focus>p {
+    color: #7C0505;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.intro-news {
+    font-size: 1.5em;
+}
+
+.small-icons {
+    width: 2%;
+}
+
+
+/* footer */
+
+footer {
+    background-color: #02202B;
+}
+
+.social-icons {
+    display: inline-block;
+    width: 70%;
+    margin: 50px 0 50px 150px;
+}
+
+.icon-sprite {
+    width: 97px;
+    height: 97px;
+    float: left;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 11%;
+    border: 1px bold black;
+}
+
+#twitter-sprite {
+    background-image: url("iconos-sociales.png");
+    background-position: 200px 99px;
+}
+
+#twitter-sprite:hover {
+    background-image: url("iconos-sociales.png");
+    background-position: 200px 0px;
+}
+
+#facebook-sprite {
+    background-image: url("iconos-sociales.png");
+    background-position: -5px 99px;
+}
+
+#facebook-sprite:hover {
+    background-image: url("iconos-sociales.png");
+    background-position: -5px 0px;
+}
+
+#google-sprite {
+    background-image: url("iconos-sociales.png");
+    background-position: 100px 99px;
+}
+
+#google-sprite:hover {
+    background-image: url("iconos-sociales.png");
+    background-position: 100px 0px;
+}
+
+#instagram-sprite {
+    background-image: url("iconos-sociales.png");
+    background-position: 400px 99px;
+}
+
+#instagram-sprite:hover {
+    background-image: url("iconos-sociales.png");
+    background-position: 400px 0px;
+}
+
+.icon-sprite>span {
+    color: grey;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    top: 100px;
+}
+
+.icon-sprite>span:hover {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-copyright>ul {
+    display: inline-block;
+    width: 100%;
+    background-color: black;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.footer-copyright>ul>li {
+    display: list-item;
+    float: left;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0 10px;
+    border-right: 1px solid white;
+}
+
+.footer-copyright>ul>li:last-child {
+    border-right: none;
+}
+
+.footer-copyright>ul>li>a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-copyright>ul>li>a:hover {
+    text-decoration: none;
+    color: rgba(248, 206, 17, 0.8);
+    cursor: pointer;
+}
