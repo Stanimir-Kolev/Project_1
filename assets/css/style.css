@@ -3,7 +3,7 @@ body {
 }
 
 .wrapper {
-    width: 91%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -76,30 +76,101 @@ main {
     background-color: #5A8ED1;
 }
 
-.left-top-news {
-    width: 40%;
+#main-div{
+    background-color: white;
+    width: 98%;
+    margin:auto;
 }
 
-.image-news {
+.news-box{
+    width: 45%;
+    display: inline-table;
+}
+.news-box>img{
+    width: 320px;
+}
+.news-box>p{
+    background-color:rgba(0, 0, 0, 0.7);
+    position: relative;
+    top: -53px;
+    color: white;
+    text-align: justify;
+    height: 50px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 320px;
+}
+#content{
+    display: inline-block;
     width: 100%;
 }
-
-.on-focus>p {
-    color: #7C0505;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.5em;
+#content>aside{
+    width: 33%;
 }
 
-.intro-news {
-    font-size: 1.5em;
+#content>section{
+    width: 33%;
+    float:left;
 }
 
-.small-icons {
-    width: 2%;
+#content>aside{
+    float: left;
 }
+#content>aside>div>ul>li{
+     background-color: greenyellow;
+    display: inline-block;
+    font-size: 1.3em;
+    cursor: pointer;
+    width: 32.5%;
+    line-height: 40px;
+}
+#content>aside>div>ul{
+text-align: center;
 
-
+ margin-bottom: 10px;
+}
+#aside-sort>div>p>span{
+    font-size: 20px;
+    padding:20px;
+    margin:0 15px 10px 1px;
+    border-radius: 50%;
+    float: left;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    text-align: center;
+    background-color: blue;
+    color: red;
+    font-weight: bolder;
+}
+#aside-sort>div>p{
+    text-align: left;
+    height: 62px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 337px;
+     margin-bottom: 10px;
+}
+#aside-content{
+    background-color: greenyellow;
+    padding: 10px;
+}
+.carousel-image{
+    float: left;
+}
+.item{
+    display: inline-block;
+    width: 100%;
+}
+.carousel{
+    width:90.5%;
+    margin-bottom: 10px;
+}
+.carousel-image>img{
+    width: 250px;
+    margin-left: 6px;
+}
 /* footer */
 
 footer {
@@ -115,7 +186,6 @@ footer {
 .icon-sprite {
     width: 97px;
     height: 97px;
-    float: left;
     display: inline-block;
     border-radius: 50%;
     margin-left: 11%;
@@ -167,9 +237,12 @@ footer {
     display: block;
     text-align: center;
     text-transform: uppercase;
-    text-decoration: none;
     position: relative;
-    top: 100px;
+    top: 110px;
+}
+
+.icon-sprite {
+    text-decoration: none;
 }
 
 .icon-sprite>span:hover {
