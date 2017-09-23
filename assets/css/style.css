@@ -6,12 +6,45 @@ body {
     width: 80%;
     margin: 0 auto;
 }
+/*signup*/
+        /*.div {
+            margin: 5px;
+            padding: 5px;
+            width: 400px;
+            background-color: #C6BEB5;
+        }
 
+        #sign-up {
+            position: absolute;
+            top:200px;
+            margin: auto;
+            width: 400px;
+        }
+
+        #submit {
+            margin-left: 100px;
+            width: 200px;
+            font-size: 1.2em;
+        }
+
+        #userError {
+            display: none;
+            margin-left: 5px;
+            font-size: 0.8em;
+            color: red;
+        }
+
+        #passError {
+            display: none;
+            margin-left: 5px;
+            font-size: 0.8em;
+            color: red;
+        }*/
 
 /* header */
 
 header {
-    background-color: #0F93C7;
+    background-color: #C6BEB5;
 }
 
 header>div>img {
@@ -30,6 +63,7 @@ header>nav>ul>li {
     width: 12%;
     text-align: center;
     font-weight: bold;
+    font-size: 1.1em;
 }
 
 header>nav>ul>li>a {
@@ -73,7 +107,7 @@ header>div>ul>li:last-child {
 /* main */
 
 main {
-    background-color: #5A8ED1;
+    background-color: #C6BEB5;
 }
 
 #main-div {
@@ -117,8 +151,8 @@ main {
 #content {
     display: inline-block;
     width: 100%;
-    /* text-align: center; */
     padding: 10px;
+    background-color: #6B0000;
 }
 
 #content>aside {
@@ -139,7 +173,7 @@ main {
 }
 
 #content>aside>div>ul>li {
-    background-color: greenyellow;
+    background-color: #C6BEB5;
     display: inline-block;
     font-size: 1.3em;
     cursor: pointer;
@@ -156,13 +190,13 @@ main {
     font-size: 20px;
     padding: 15px;
     margin: 0 15px 10px 1px;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     float: left;
     width: 10px;
     height: 10px;
     line-height: 10px;
-    background-color: blue;
-    color: red;
+    /*background-color: blue;*/
+    color: #6B0000;
     font-weight: bolder;
     box-sizing: content-box;
 }
@@ -175,15 +209,19 @@ main {
 }
 
 #aside-content {
-    background-color: greenyellow;
+    background-color: #C6BEB5;
     padding: 10px;
 }
+
+/*carousel ->>>>*/
 
 .item {
     display: inline-block;
     width: 100%;
 }
-
+.container{
+    background-color: #6B0000;
+}
 
 /* .carousel {
     width: 90.5%;

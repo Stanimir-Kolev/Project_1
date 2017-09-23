@@ -25,3 +25,12 @@
 
 // var pet = document.getElementsByClassName('peta');
 
+var element = document.getElementsByClassName('li');
+var li = Array.prototype.slice.call(element);
+li.forEach(function (x) {
+    x.addEventListener('click', function () {
+        x.style.backgroundColor = 'red';
+        x.style.lineHeight = 50 + 'px';
+    }, false);
+});
+
