@@ -122,10 +122,12 @@ main {
 .news-box {
     width: 100%;
     display: inline-block;
+    height: 197px;
 }
 
 .news-box>img {
     width: 100%;
+    height: 100%;
 }
 
 .news-box>p {
