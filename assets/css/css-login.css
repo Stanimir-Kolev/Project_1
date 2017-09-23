@@ -1,0 +1,67 @@
+/* signup*/
+
+fieldset {
+    text-align: center;
+    background-color: #C6BEB5;
+}
+
+.div {
+    margin: 5px;
+    padding: 5px;
+}
+
+label {
+    text-align: right;
+}
+
+#username,
+#password {
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+#sign-up {
+    margin: auto;
+    width: 350px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#submit {
+    font-size: 1.2em;
+}
+
+#userError {
+    display: none;
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: red;
+}
+
+#passError {
+    display: none;
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: red;
+}
+
+#fbl-btn {
+    background-color: #455ea1;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 1px 6px;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+    color: white;
+}
+
+.text-content {
+    text-decoration: none;
+    color: red;
+}
