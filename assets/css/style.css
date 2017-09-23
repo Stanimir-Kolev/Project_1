@@ -6,41 +6,6 @@ body {
     width: 80%;
     margin: 0 auto;
 }
-/*signup*/
-        /*.div {
-            margin: 5px;
-            padding: 5px;
-            width: 400px;
-            background-color: #C6BEB5;
-        }
-
-        #sign-up {
-            position: absolute;
-            top:200px;
-            margin: auto;
-            width: 400px;
-        }
-
-        #submit {
-            margin-left: 100px;
-            width: 200px;
-            font-size: 1.2em;
-        }
-
-        #userError {
-            display: none;
-            margin-left: 5px;
-            font-size: 0.8em;
-            color: red;
-        }
-
-        #passError {
-            display: none;
-            margin-left: 5px;
-            font-size: 0.8em;
-            color: red;
-        }*/
-
 /* header */
 
 header {
@@ -53,7 +18,7 @@ header>div>img {
 }
 
 header>nav>ul {
-    background-color: black;
+    background-color: rgb(16, 6, 66);
     text-align: center;
     line-height: 30px;
 }
@@ -66,6 +31,10 @@ header>nav>ul>li {
     font-size: 1.1em;
 }
 
+header>nav>ul>li>span {
+    color: rgb(255, 177, 0);
+}
+
 header>nav>ul>li>a {
     text-decoration: none;
     text-transform: uppercase;
@@ -76,7 +45,7 @@ header>nav>ul>li>a {
 header>nav>ul>li>a:hover {
     text-decoration: none;
     text-transform: uppercase;
-    color: rgba(248, 206, 17, 0.8);
+    color: rgb(225, 156, 0);
 }
 
 header>div>ul {
@@ -86,6 +55,10 @@ header>div>ul {
 
 header>div>ul>li>img {
     width: 21px;
+}
+
+header>div>ul>li>span {
+    color: rgb(225, 156, 0);
 }
 
 header>div>ul>li {
@@ -104,25 +77,45 @@ header>div>ul>li:last-child {
 }
 
 
+
+
 /* main */
 
 main {
     background-color: #C6BEB5;
 }
 
-#main-div {
-    background-color: white;
+#novini {
+    background-color: #6B0000;
     width: 98%;
     margin: auto;
+    margin-top: -10px;
 }
 
-#main-div>.container {
+#novini>.container {
     width: 100%;
     margin: auto;
-    padding: 0 10px 0 10px;
+    padding: 20px 0 0 0;
 }
-
-#main-div>.container>.carousel {
+#svqt{
+    display: none;
+}
+#sport{
+    display: none;
+}
+#politika{
+    display: none;
+}
+#zdrave{
+    display: none;
+}
+#tehnologii{
+    display: none;
+}
+#galeriq{
+    display: none;
+}
+#novini>.container>.carousel {
     width: 100%;
 }
 
@@ -153,6 +146,7 @@ main {
     width: 100%;
     padding: 10px;
     background-color: #6B0000;
+    margin-top: 40px;
 }
 
 #content>aside {
@@ -231,6 +225,11 @@ main {
 .carousel-image {
     float: left;
     width: 25%;
+    margin: 0 40px;
+}
+
+.carousel-image:first-child {
+    margin-left: 51px;
 }
 
 .carousel-image>img {
@@ -249,7 +248,7 @@ main {
 /* footer */
 
 footer {
-    background-color: #02202B;
+    background-color: #C6BEB5;
 }
 
 .social-icons {
