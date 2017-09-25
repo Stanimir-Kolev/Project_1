@@ -181,3 +181,54 @@ zdrave.addEventListener('click', function () {
     zdraveDiv.style.margin = 'auto';
     zdraveDiv.style.marginTop = -10 + 'px';
 }, false);
+
+
+// registr button 
+
+
+var reg = document.getElementById('reg');
+
+reg.addEventListener('click', function () {
+    var regDiv = document.getElementById('sign-up');
+    var vhodDiv = document.getElementById('sign-in');
+    var formVhod = document.getElementById('formVhod');
+    // formVhod.style.width = 30 + '%';
+    formVhod.style.margin = 'auto';
+    vhodDiv.style.display = 'none';
+    regDiv.style.display = 'block';
+    regDiv.style.position = 'fixed';
+    regDiv.style.margin = 'auto';
+    regDiv.style.zIndex = 1000;
+    regDiv.style.width = 350 + 'px';
+    regDiv.style.top = 140 + 'px';
+    regDiv.style.left = 498 + 'px';
+    //close button;
+    var closeReg = document.getElementById('close1');
+    closeReg.addEventListener('click', function () {
+        regDiv.style.display = 'none';
+    }, false)
+}, false);
+
+var vhod = document.getElementById('vhod');
+// sign up button
+vhod.addEventListener('click', function () {
+    var regDiv = document.getElementById('sign-up');
+    var vhodDiv = document.getElementById('sign-in');
+    var formVhod = document.getElementById('formVhod');
+    // formVhod.style.width = 30 + '%';
+    formVhod.style.margin = 'auto';
+    regDiv.style.display = 'none';
+    vhodDiv.style.display = 'block';
+    vhodDiv.style.position = 'fixed';
+    vhodDiv.style.margin = 'auto';
+    vhodDiv.style.zIndex = 1000;
+    vhodDiv.style.width = 350 + 'px';
+    vhodDiv.style.top = 140 + 'px';
+    vhodDiv.style.left = 498 + 'px';
+    //close button;
+    var closeVhod = document.getElementById('close');
+    closeVhod.addEventListener('click', function () {
+        vhodDiv.style.display = 'none';
+    }, false)
+}, false);
+

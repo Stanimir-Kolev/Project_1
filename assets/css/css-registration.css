@@ -1,6 +1,8 @@
 /* signup*/
 
-.left-reg-box {}
+#sign-up {
+    display: none;
+}
 
 fieldset {
     text-align: center;
@@ -11,7 +13,13 @@ fieldset {
     margin: 5px;
     padding: 5px;
 }
-
+#close1{
+    margin-top: -59px;
+    margin-right: 4px;
+    float:right;
+    width: 40px;
+    cursor: pointer;
+}
 label {
     float: left;
     margin-left: 28px;
