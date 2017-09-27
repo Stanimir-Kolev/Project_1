@@ -11,8 +11,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
     <script src="./assets/js/searching.js"></script>
     <script src="./assets/js/news-box-change.js"></script>
+=======
+    <link rel="stylesheet" href="./assets/css/css-login.css">
+    <link rel="stylesheet" href="./assets/css/css-registration.css">
+    <script src="./assets/js/javascript.js"></script>
+>>>>>>> 3d9b1a544f661a7dc67f31fe0a565d2f992cd160
 
 </head>
 
@@ -31,10 +37,10 @@
                         </div> -->
                     </li>
                     <li>
-                        <span>Вход</span>
+                        <span id="vhod">Вход</span>
                     </li>
                     <li>
-                        <span>Регистрация</span>
+                        <span id="reg">Регистрация</span>
                     </li>
                 </ul>
             </div>
@@ -51,6 +57,106 @@
             </nav>
         </header>
         <main>
+            <!--SIGN IN-->
+            <div id="sign-in">
+                <form action="" id="formVhod">
+                    <fieldset>
+                        <h2>ВХОД</h2>
+                        <div><img id="close" title="close" src="http://blink.watch/images/close.png" alt=""></div>
+                        <div class="div">
+                            <label for="" id="enterName">Потребителско име:</label>
+                            <br/>
+                            <input name="username" type="text" id="username">
+                        </div>
+                        <div class="div">
+                            <label for="" id="enterPass">Парола</label>
+                            <br/>
+                            <input name="pass" type="password" id="password">
+                        </div>
+                        <a href="#" class="text-content">Забравена парола</a>
+                        <br/>
+                        <br/>
+                        <input name="pass" type="checkbox" id="repeatpassword" required> <span>Запомни ме на този компютър</span>
+                        <br/>
+                        <br/>
+                        <div class="div">
+                            <input type="submit" value="ВХОД" id="submit">
+                        </div>
+                        <p>или</p>
+                        <input name="pass" type="checkbox" id="repeatpassword" required> <span>Запомни ме на този компютър</span>
+                        <br/>
+                        <br/>
+                        <a href="#" id="fbl-btn">
+                            Вход с Facebook
+                        </a>
+                        <br/>
+                        <br/>
+                        <a href="#" class="text-content">Направи нова регистрация</a>
+                        <br/>
+                        <!--</div>-->
+                    </fieldset>
+                </form>
+            </div>
+            <!--FORMA ZA REGISTRATCIQ-->
+            <div id="sign-up">
+                <form action="">
+                    <fieldset>
+                        <h2>РЕГИСТРАЦИЯ</h2>
+                        <div><img id="close1" title="close" src="http://blink.watch/images/close.png" alt=""></div>
+                        <p>Създаване на профил</p>
+                        <div class="div">
+                            <label for="" id="enterMail" placeholder="">E-mail:</label>
+                            <br/>
+                            <input name="mail" type="text" id="mail" placeholder="E-mail">
+                        </div>
+                        <div class="div">
+                            <label for="" id="enterName">Потребителско име:</label>
+                            <br/>
+                            <input name="username" type="text" id="username" placeholder="Потребителско име">
+                        </div>
+                        <div class="div">
+                            <label for="" id="enterPass">Парола</label>
+                            <br/>
+                            <input name="pass" type="password" id="password" placeholder="Парола">
+                        </div>
+                        <div class="div">
+                            <label for="" id="enterPass">Потвърди парола</label>
+                            <br/>
+                            <input name="pass" type="password" id="password" placeholder="Парола">
+                        </div>
+                        <br/>
+                        <div class="box-info">
+                            <div class="pick-info-box">
+                                <label for="gander" id="pick-gander">Пол:</label>
+                                </br>
+                                <select name="gander" id="gander">
+                            <option value="male">Мъж</option>
+                            <option value="female">Жена</option>
+                        </select>
+                            </div>
+                            <div class="pick-info-box">
+                                <label for="year" id="pick-year">Год. на раждане:</label>
+                                </br>
+                                <select name="year" id="year">
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2016">2015</option>
+                            <option value="2016">2014</option>
+                            <option value="2016">2013</option>
+                            <option value="2016">2012</option>
+                            <option value="2016">2011</option>
+                            <option value="2016">2010</option>
+                            <option value="2016">2009</option>
+                        </select>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="div">
+                            <input type="submit" value="ПРОДЪЛЖИ" id="submit">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
             <div id="novini">
                 <div class="container">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -526,7 +632,7 @@
             </div>
         </footer>
     </div>
-    <script src="./assets/js/search.js"></script>
+
 </body>
 
 </html>
