@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./assets/css/css-login.css">
     <link rel="stylesheet" href="./assets/css/css-registration.css">
     <script src="./assets/js/javascript.js"></script>
+    <script src="./assets/js/loginService.js"></script>
 
 </head>
 
@@ -36,6 +37,9 @@
                     </li>
                     <li>
                         <span id="reg">Регистрация</span>
+                    </li>
+                    <li>
+                        <span id="userIn"></span>
                     </li>
                 </ul>
             </div>
@@ -68,6 +72,7 @@
                             <br/>
                             <input name="pass" type="password" id="password">
                         </div>
+                        <p id="error">Невалидно потребителско име или парола!</p>
                         <a href="#" class="text-content">Забравена парола</a>
                         <br/>
                         <br/>
@@ -75,15 +80,8 @@
                         <br/>
                         <br/>
                         <div class="div">
-                            <input type="submit" value="ВХОД" id="submit">
+                            <input type="submit" value="ВХОД" id="subLogin">
                         </div>
-                        <p>или</p>
-                        <input name="pass" type="checkbox" id="repeatpassword" required> <span>Запомни ме на този компютър</span>
-                        <br/>
-                        <br/>
-                        <a href="#" id="fbl-btn">
-                            Вход с Facebook
-                        </a>
                         <br/>
                         <br/>
                         <a href="#" class="text-content">Направи нова регистрация</a>
@@ -99,55 +97,30 @@
                         <h2>РЕГИСТРАЦИЯ</h2>
                         <div><img id="close1" title="close" src="http://blink.watch/images/close.png" alt=""></div>
                         <p>Създаване на профил</p>
-                        <div class="div">
-                            <label for="" id="enterMail" placeholder="">E-mail:</label>
-                            <br/>
-                            <input name="mail" type="text" id="mail" placeholder="E-mail">
-                        </div>
+
                         <div class="div">
                             <label for="" id="enterName">Потребителско име:</label>
                             <br/>
-                            <input name="username" type="text" id="username" placeholder="Потребителско име">
+                            <input name="username" type="text" id="username1" placeholder="Потребителско име">
                         </div>
                         <div class="div">
                             <label for="" id="enterPass">Парола</label>
                             <br/>
-                            <input name="pass" type="password" id="password" placeholder="Парола">
+                            <input name="pass" type="password" id="password1" placeholder="Парола">
                         </div>
                         <div class="div">
                             <label for="" id="enterPass">Потвърди парола</label>
                             <br/>
-                            <input name="pass" type="password" id="password" placeholder="Парола">
+                            <input name="pass" type="password" id="repPass" placeholder="Парола">
                         </div>
-                        <br/>
-                        <div class="box-info">
-                            <div class="pick-info-box">
-                                <label for="gander" id="pick-gander">Пол:</label>
-                                </br>
-                                <select name="gander" id="gander">
-                            <option value="male">Мъж</option>
-                            <option value="female">Жена</option>
-                        </select>
-                            </div>
-                            <div class="pick-info-box">
-                                <label for="year" id="pick-year">Год. на раждане:</label>
-                                </br>
-                                <select name="year" id="year">
-                            <option value="2017">2017</option>
-                            <option value="2016">2016</option>
-                            <option value="2016">2015</option>
-                            <option value="2016">2014</option>
-                            <option value="2016">2013</option>
-                            <option value="2016">2012</option>
-                            <option value="2016">2011</option>
-                            <option value="2016">2010</option>
-                            <option value="2016">2009</option>
-                        </select>
-                            </div>
-                        </div>
-                        <br/>
                         <div class="div">
-                            <input type="submit" value="ПРОДЪЛЖИ" id="submit">
+                            <label for="" id="enterMail" placeholder="">E-mail:</label>
+                            <br/>
+                            <input name="email" type="text" id="email" placeholder="E-mail">
+                            <p id='errorReg'></p>
+                        </div>
+                        <div class="div">
+                            <input type="submit" value="ПРОДЪЛЖИ" id="subReg">
                         </div>
                     </fieldset>
                 </form>

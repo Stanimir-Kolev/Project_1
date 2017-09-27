@@ -63,3 +63,9 @@ label {
     text-decoration: none;
     color: red;
 }
+
+#error{
+    display: none;
+    font-size: 0.8em;
+    color: red;
+}

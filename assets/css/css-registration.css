@@ -50,12 +50,10 @@ label {
     float: left;
 }
 
-#mail {
+#email {
     width: 80%;
 }
-
-#username,
-#password {
+#password1,#repPass,#username1 {
     display: block;
     margin: auto;
     width: 80%;
@@ -66,7 +64,6 @@ label {
     width: 350px;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 #submit {
     font-size: 1.2em;
 }

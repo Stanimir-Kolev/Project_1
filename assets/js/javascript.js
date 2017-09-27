@@ -217,6 +217,38 @@ document.addEventListener('DOMContentLoaded', function () {
         regDiv.style.width = 350 + 'px';
         regDiv.style.top = 140 + 'px';
         regDiv.style.left = 498 + 'px';
+        //Registry
+        var subReg = document.getElementById('subReg');
+        subReg.addEventListener('click', function (event) {
+            event.preventDefault();
+            var errorReg = document.getElementById('errorReg');
+            var username = document.getElementById('username1').value;
+            var password = document.getElementById('password1').value;
+            var repeatPassword = document.getElementById('repPass').value;
+            var email = document.getElementById('email').value;
+            if (userList.addUser(username, password, repeatPassword, email)) {
+                vhodDiv.style.display = 'block';
+                regDiv.style.display = 'none';
+                formVhod.style.margin = 'auto';
+                regDiv.style.display = 'none';
+                vhodDiv.style.display = 'block';
+                vhodDiv.style.position = 'fixed';
+                vhodDiv.style.margin = 'auto';
+                vhodDiv.style.zIndex = 1000;
+                vhodDiv.style.width = 350 + 'px';
+                vhodDiv.style.top = 140 + 'px';
+                vhodDiv.style.left = 498 + 'px';
+            } else {
+                errorReg.textContent = 'НЕМА БАТЕ НЕ МОА';
+                errorReg.style.color = 'red';
+                errorReg.style.fontSize = 0.8 + 'em';
+                document.getElementById('username1').value = '';
+                document.getElementById('password1').value = '';
+                document.getElementById('repPass').value = '';
+                document.getElementById('email').value = '';
+            }
+
+        }, false);
         //close button;
         var closeReg = document.getElementById('close1');
         closeReg.addEventListener('click', function () {
@@ -240,6 +272,26 @@ document.addEventListener('DOMContentLoaded', function () {
         vhodDiv.style.width = 350 + 'px';
         vhodDiv.style.top = 140 + 'px';
         vhodDiv.style.left = 498 + 'px';
+        // login
+        subLogin.addEventListener('click', function (event) {
+            var error = document.getElementById('error');
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var userIn = document.getElementById('userIn');
+            var vhod = document.getElementById('vhod');
+            var reg = document.getElementById('reg');
+            if (userList.login(username, password)) {
+                vhodDiv.style.display = 'none';
+                vhod.style.display = 'none';
+                reg.style.display = 'none';
+                userIn.textContent = 'Вие сте логнат като:"' + document.getElementById('username').value + '"';
+            } else {
+                error.style.display = 'block';
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+            }
+        }, false);
         //close button;
         var closeVhod = document.getElementById('close');
         closeVhod.addEventListener('click', function () {

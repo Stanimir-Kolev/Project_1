@@ -435,6 +435,12 @@ footer {
 }
 
 
+#userIn{
+    /*display: none;*/
+    font-size: 0.8em;
+    color: #6B0000;
+}
+
 /* css for searching box */
 
 
