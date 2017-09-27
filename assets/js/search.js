@@ -1,23 +1,21 @@
 // Butoni sort
-var elementLi = document.querySelectorAll('.aside-sort-content');
-elementLi.forEach(function (x) {
-    x.setAttribute('clicked', 'false')
-    x.addEventListener('click', function () {
-        var asideContent = document.getElementById('aside-content');
-        if (x.getAttribute('clicked') == 'false') {
-            x.style.paddingBottom = 10 + 'px';
-            asideContent.style.marginTop = -10 + 'px';
-            x.setAttribute('clicked', 'true');
-        } else {
-            x.style.paddingBottom = 0 + 'px';
-            asideContent.style.marginTop = -10 + 'px';
-            x.setAttribute('clicked', 'false');
+var tagoveLi = document.querySelectorAll('.aside-sort-content');
+var first = tagoveLi[0].setAttribute('clicked', 'on');
+var second = tagoveLi[1].setAttribute('clicked', 'off');
+var third = tagoveLi[2].setAttribute('clicked', 'off');
+tagoveLi.forEach(function(x) {
+    x.addEventListener('click', function() {
+        if (x.getAttribute('clicked') == 'off') {
+            var toziEOn = tagoveLi.find(y => y.getAttribute('clicked') == 'on');
+            toziEOn.setAttribute('clicked', 'off');
+            x.className = "aside-sort-content-on";
+            x.setAttribute('clicked', 'on');
         }
     }, false);
 });
 //Novini
 var novini = document.getElementById('novini-content');
-novini.addEventListener('click', function () {
+novini.addEventListener('click', function() {
     var svqtdiv = document.getElementById('svqt');
     var sportdiv = document.getElementById('sport');
     var noviniDiv = document.getElementById('novini');
@@ -40,7 +38,7 @@ novini.addEventListener('click', function () {
 
 // Svqt
 var svqt = document.getElementById('svqt-content');
-svqt.addEventListener('click', function () {
+svqt.addEventListener('click', function() {
     event.preventDefault();
     var svqtdiv = document.getElementById('svqt');
     var sportdiv = document.getElementById('sport');
@@ -64,7 +62,7 @@ svqt.addEventListener('click', function () {
 
 //sport
 var sport = document.getElementById('sport-content');
-sport.addEventListener('click', function () {
+sport.addEventListener('click', function() {
     event.preventDefault();
     var svqtdiv = document.getElementById('svqt');
     var sportdiv = document.getElementById('sport');
@@ -88,7 +86,7 @@ sport.addEventListener('click', function () {
 
 //politika
 var politika = document.getElementById('politika-content');
-politika.addEventListener('click', function () {
+politika.addEventListener('click', function() {
     event.preventDefault();
     var svqtdiv = document.getElementById('svqt');
     var sportdiv = document.getElementById('sport');
@@ -112,7 +110,7 @@ politika.addEventListener('click', function () {
 
 //galeriq
 var galeriq = document.getElementById('galeriq-content');
-galeriq.addEventListener('click', function () {
+galeriq.addEventListener('click', function() {
     event.preventDefault();
     var svqtdiv = document.getElementById('svqt');
     var sportdiv = document.getElementById('sport');
@@ -136,7 +134,7 @@ galeriq.addEventListener('click', function () {
 
 //tehnologii
 var tehnologii = document.getElementById('tehnologii-content');
-tehnologii.addEventListener('click', function () {
+tehnologii.addEventListener('click', function() {
     event.preventDefault();
     var svqtdiv = document.getElementById('svqt');
     var sportdiv = document.getElementById('sport');
@@ -160,7 +158,7 @@ tehnologii.addEventListener('click', function () {
 
 //zdrave
 var zdrave = document.getElementById('zdrave-content');
-zdrave.addEventListener('click', function () {
+zdrave.addEventListener('click', function() {
     event.preventDefault();
     var svqtdiv = document.getElementById('svqt');
     var sportdiv = document.getElementById('sport');

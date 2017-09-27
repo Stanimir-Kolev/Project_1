@@ -1,11 +1,20 @@
+@font-face {
+    font-family: 'Fira Sans Extra Condensed';
+    font-style: normal;
+    src: url("../fonts/Fira_Sans_Extra_Condensed/FiraSansExtraCondensed-Regular.ttf");
+}
+
 body {
     background-color: grey;
+    font-family: 'Fira Sans Extra Condensed';
 }
 
 .wrapper {
     width: 80%;
     margin: 0 auto;
 }
+
+
 /* header */
 
 header {
@@ -15,6 +24,10 @@ header {
 header>div>img {
     margin-left: 40px;
     width: 200px;
+}
+
+header>nav {
+    padding: 0 11px;
 }
 
 header>nav>ul {
@@ -53,9 +66,47 @@ header>div>ul {
     margin: 45px 40px 0 0;
 }
 
-header>div>ul>li>img {
+
+/* searching in header */
+
+#search-img {
     width: 21px;
 }
+
+#search-box {
+    border: 1px solid black;
+}
+
+#search-input {
+    border: none;
+    font-weight: normal;
+    font-size: 0.8em;
+    height: 26px;
+    float: left;
+}
+
+#search-box>button {
+    background-color: white;
+    border: none;
+    height: 26px;
+}
+
+#search-box>span {
+    padding: 3px 8px;
+    border: 1px solid white;
+    background-color: #6B0000;
+    color: white;
+}
+
+#search-box>span:hover {
+    padding: 3px 8px;
+    border: 1px solid rgb(225, 156, 0);
+    background-color: #6B0000;
+    color: rgb(225, 156, 0);
+}
+
+
+/* .................... */
 
 header>div>ul>li>span {
     color: rgb(225, 156, 0);
@@ -77,8 +128,6 @@ header>div>ul>li:last-child {
 }
 
 
-
-
 /* main */
 
 main {
@@ -93,28 +142,36 @@ main {
 }
 
 #novini>.container {
-    width: 100%;
+    width: 80%;
     margin: auto;
     padding: 20px 0 0 0;
+    background-color: #6B0000;
 }
-#svqt{
+
+#svqt {
     display: none;
 }
-#sport{
+
+#sport {
     display: none;
 }
-#politika{
+
+#politika {
     display: none;
 }
-#zdrave{
+
+#zdrave {
     display: none;
 }
-#tehnologii{
+
+#tehnologii {
     display: none;
 }
-#galeriq{
+
+#galeriq {
     display: none;
 }
+
 #novini>.container>.carousel {
     width: 100%;
 }
@@ -149,26 +206,44 @@ main {
     padding: 10px;
     background-color: #6B0000;
     margin-top: 40px;
+    text-align: center;
+}
+
+#section-content {
+    display: inline-block;
+    width: 67%;
+    /* float: left; */
+}
+
+#section-content>section {
+    display: inline-block;
+    width: 47%;
+}
+
+#section-content>section:first-of-type {
+    float: left;
+}
+
+#section-content>section:last-of-type {
+    display: inline-block;
 }
 
 #content>aside {
     width: 32%;
+    float: right;
 }
 
-#content>section {
-    width: 32%;
-    float: left;
-}
 
-#content>section:nth-child(2) {
+/* #content>section:nth-child(2) {
     margin: 0 20px;
+} */
+
+#nav-aside-sort {
+    text-align: center;
+    margin: 0;
 }
 
-#content>aside {
-    float: left;
-}
-
-#content>aside>div>ul>li {
+.aside-sort-content {
     background-color: #C6BEB5;
     display: inline-block;
     font-size: 1.3em;
@@ -177,9 +252,14 @@ main {
     line-height: 40px;
 }
 
-#content>aside>div>ul {
-    text-align: center;
-    margin-bottom: 10px;
+.aside-sort-content-on {
+    display: inline-block;
+    font-size: 1.3em;
+    cursor: pointer;
+    width: 32.6%;
+    line-height: 40px;
+    padding-bottom: 5px;
+    background-color: #94908B;
 }
 
 #aside-sort>div>p>span {
@@ -205,9 +285,15 @@ main {
 }
 
 #aside-content {
-    background-color: #C6BEB5;
+    background-color: #94908B;
     padding: 10px;
 }
+
+#aside-content>p>span {
+    border: 1px solid #6B0000;
+    border-radius: 50%;
+}
+
 
 /*carousel ->>>>*/
 
@@ -215,19 +301,11 @@ main {
     display: inline-block;
     width: 100%;
 }
-.container{
-    background-color: #6B0000;
-}
-
-/* .carousel {
-    width: 90.5%;
-    margin-bottom: 10px;
-} */
 
 .carousel-image {
     float: left;
     width: 25%;
-    margin: 0 40px;
+    margin: 0 30px;
 }
 
 .carousel-image:first-child {
@@ -264,8 +342,8 @@ footer {
     height: 97px;
     display: inline-block;
     border-radius: 50%;
-    margin-left: 11%;
-    border: 1px bold black;
+    margin-left: 10%;
+    border: 1px solid black;
 }
 
 #twitter-sprite {
@@ -355,3 +433,69 @@ footer {
     color: rgba(248, 206, 17, 0.8);
     cursor: pointer;
 }
+
+
+/* css for searching box */
+
+
+/* 
+#section-content {
+    background-color: #C6BEB5;
+    text-align: left;
+}
+
+#section-content>h2 {
+    padding: 0 0 0 20px;
+}
+
+#section-content>form {
+    width: 65%;
+    padding: 0 0 20px 20px;
+}
+
+#section-content>form>div>div {
+    display: inline-block;
+    width: 30%;
+}
+
+#section-content>form>div>label {
+    width: 35%;
+}
+
+#search-input-text {
+    width: 260px;
+    height: 30px;
+}
+
+#section-content>form>div>select {
+    width: 260px;
+    height: 30px;
+}
+
+#search-but {
+    display: block;
+    margin: 0 auto;
+}
+
+#info-for-search {
+    background-color: white;
+    padding: 20px 10px;
+}
+
+#search-result-mini {
+    background-color: white;
+}
+
+#search-result-mini>article {
+    border-top: 2px dotted #6B0000;
+    border-bottom: 2px dotted #6B0000;
+    margin-top: 5px;
+}
+
+#search-result-mini>article:first-of-type {
+    margin-top: 0;
+}
+
+#search-result-mini>article>div {
+    padding: 20px 10px;
+} */
