@@ -31,8 +31,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }, false);
     });
     //Novini
+
     var novini = document.getElementById('novini-content');
+     getNews('focus').then(function (data) {
+                var sudurjanie = document.querySelector('#novini > #content > .section-content');
+                var section = document.createElement('section');
+                sudurjanie.appendChild(section);
+            for (var index = 0; index < 6; index++) {
+                var article = document.createElement('article');
+                article.setAttribute('class', 'news-box');
+                section.appendChild(article);
+                var image = document.createElement('img');
+                var p = document.createElement('p');
+                p.textContent = data.description[index];
+                article.appendChild(image);
+                image.src = data.urlImage[index];
+                article.appendChild(p);
+            }
+        }).catch();
+    var isClicked = false;
     novini.addEventListener('click', function () {
+        event.preventDefault();
+        document.querySelector('#novini > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
         var sportdiv = document.getElementById('sport');
         var noviniDiv = document.getElementById('novini');
@@ -47,16 +67,34 @@ document.addEventListener('DOMContentLoaded', function () {
         zdraveDiv.style.display = 'none';
         tehnologiiDiv.style.display = 'none';
         noviniDiv.style.display = 'block';
-        noviniDiv.style.backgroundColor = 'purple';
+        // noviniDiv.style.backgroundColor = ;
         noviniDiv.style.width = 98 + '%';
         noviniDiv.style.margin = 'auto';
         noviniDiv.style.marginTop = -10 + 'px';
+        getNews('focus').then(function (data) {
+                var sudurjanie = document.querySelector('#novini > #content > .section-content');
+                var section = document.createElement('section');
+                sudurjanie.appendChild(section);
+            for (var index = 0; index < 6; index++) {
+                var article = document.createElement('article');
+                article.setAttribute('class', 'news-box');
+                section.appendChild(article);
+                var image = document.createElement('img');
+                var p = document.createElement('p');
+                p.textContent = data.description[index];
+                article.appendChild(image);
+                image.src = data.urlImage[index];
+                article.appendChild(p);
+            }
+        }).catch();
+
     }, false);
 
     // Svqt
     var svqt = document.getElementById('svqt-content');
     svqt.addEventListener('click', function () {
         event.preventDefault();
+        document.querySelector('#svqt > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
         var sportdiv = document.getElementById('sport');
         var noviniDiv = document.getElementById('novini');
@@ -75,12 +113,29 @@ document.addEventListener('DOMContentLoaded', function () {
         svqtdiv.style.width = 98 + '%';
         svqtdiv.style.margin = 'auto';
         svqtdiv.style.marginTop = -10 + 'px';
+        getNews('cnn').then(function (data) {
+                var sudurjanie = document.querySelector('#svqt > #content > .section-content');
+                var section = document.createElement('section');
+                sudurjanie.appendChild(section);
+            for (var index = 0; index < 6; index++) {
+                var article = document.createElement('article');
+                article.setAttribute('class', 'news-box');
+                section.appendChild(article);
+                var image = document.createElement('img');
+                var p = document.createElement('p');
+                p.textContent = data.description[index];
+                article.appendChild(image);
+                image.src = data.urlImage[index];
+                article.appendChild(p);
+            }
+        }).catch();
     }, false);
 
     //sport
     var sport = document.getElementById('sport-content');
     sport.addEventListener('click', function () {
         event.preventDefault();
+        document.querySelector('#sport > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
         var sportdiv = document.getElementById('sport');
         var noviniDiv = document.getElementById('novini');
@@ -99,12 +154,29 @@ document.addEventListener('DOMContentLoaded', function () {
         sportdiv.style.width = 98 + '%';
         sportdiv.style.margin = 'auto';
         sportdiv.style.marginTop = -10 + 'px';
+        getNews('bbc-sport').then(function (data) {
+                var sudurjanie = document.querySelector('#sport > #content > .section-content');
+                var section = document.createElement('section');
+                sudurjanie.appendChild(section);
+            for (var index = 0; index < 6; index++) {
+                var article = document.createElement('article');
+                article.setAttribute('class', 'news-box');
+                section.appendChild(article);
+                var image = document.createElement('img');
+                var p = document.createElement('p');
+                p.textContent = data.description[index];
+                article.appendChild(image);
+                image.src = data.urlImage[index];
+                article.appendChild(p);
+            }
+        }).catch();
     }, false);
 
     //politika
     var politika = document.getElementById('politika-content');
     politika.addEventListener('click', function () {
         event.preventDefault();
+        document.querySelector('#politika > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
         var sportdiv = document.getElementById('sport');
         var noviniDiv = document.getElementById('novini');
@@ -123,12 +195,29 @@ document.addEventListener('DOMContentLoaded', function () {
         politikaDiv.style.width = 98 + '%';
         politikaDiv.style.margin = 'auto';
         politikaDiv.style.marginTop = -10 + 'px';
+        getNews('business-insider').then(function (data) {
+                var sudurjanie = document.querySelector('#politika > #content > .section-content');
+                var section = document.createElement('section');
+                sudurjanie.appendChild(section);
+            for (var index = 0; index < 6; index++) {
+                var article = document.createElement('article');
+                article.setAttribute('class', 'news-box');
+                section.appendChild(article);
+                var image = document.createElement('img');
+                var p = document.createElement('p');
+                p.textContent = data.description[index];
+                article.appendChild(image);
+                image.src = data.urlImage[index];
+                article.appendChild(p);
+            }
+        }).catch();
     }, false);
 
     //galeriq
     var galeriq = document.getElementById('galeriq-content');
     galeriq.addEventListener('click', function () {
         event.preventDefault();
+        document.querySelector('#galeriq > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
         var sportdiv = document.getElementById('sport');
         var noviniDiv = document.getElementById('novini');
@@ -147,12 +236,29 @@ document.addEventListener('DOMContentLoaded', function () {
         galeriqDiv.style.width = 98 + '%';
         galeriqDiv.style.margin = 'auto';
         galeriqDiv.style.marginTop = -10 + 'px';
+        getNews('fortune').then(function (data) {
+                var sudurjanie = document.querySelector('#galeriq > #content > .section-content');
+                var section = document.createElement('section');
+                sudurjanie.appendChild(section);
+            for (var index = 0; index < 6; index++) {
+                var article = document.createElement('article');
+                article.setAttribute('class', 'news-box');
+                section.appendChild(article);
+                var image = document.createElement('img');
+                var p = document.createElement('p');
+                p.textContent = data.description[index];
+                article.appendChild(image);
+                image.src = data.urlImage[index];
+                article.appendChild(p);
+            }
+        }).catch();
     }, false);
 
     //tehnologii
     var tehnologii = document.getElementById('tehnologii-content');
     tehnologii.addEventListener('click', function () {
         event.preventDefault();
+        document.querySelector('#tehnologii > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
         var sportdiv = document.getElementById('sport');
         var noviniDiv = document.getElementById('novini');
@@ -171,12 +277,29 @@ document.addEventListener('DOMContentLoaded', function () {
         tehnologiiDiv.style.width = 98 + '%';
         tehnologiiDiv.style.margin = 'auto';
         tehnologiiDiv.style.marginTop = -10 + 'px';
+        getNews('buzzfeed').then(function (data) {
+                var sudurjanie = document.querySelector('#tehnologii > #content > .section-content');
+                var section = document.createElement('section');
+                sudurjanie.appendChild(section);
+            for (var index = 0; index < 6; index++) {
+                var article = document.createElement('article');
+                article.setAttribute('class', 'news-box');
+                section.appendChild(article);
+                var image = document.createElement('img');
+                var p = document.createElement('p');
+                p.textContent = data.description[index];
+                article.appendChild(image);
+                image.src = data.urlImage[index];
+                article.appendChild(p);
+            }
+        }).catch();
     }, false);
 
     //zdrave
     var zdrave = document.getElementById('zdrave-content');
     zdrave.addEventListener('click', function () {
         event.preventDefault();
+        document.querySelector('#zdrave > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
         var sportdiv = document.getElementById('sport');
         var noviniDiv = document.getElementById('novini');
@@ -195,6 +318,22 @@ document.addEventListener('DOMContentLoaded', function () {
         zdraveDiv.style.width = 98 + '%';
         zdraveDiv.style.margin = 'auto';
         zdraveDiv.style.marginTop = -10 + 'px';
+        getNews('independent').then(function (data) {
+                var sudurjanie = document.querySelector('#zdrave > #content > .section-content');
+                var section = document.createElement('section');
+                sudurjanie.appendChild(section);
+            for (var index = 0; index < 6; index++) {
+                var article = document.createElement('article');
+                article.setAttribute('class', 'news-box');
+                section.appendChild(article);
+                var image = document.createElement('img');
+                var p = document.createElement('p');
+                p.textContent = data.description[index];
+                article.appendChild(image);
+                image.src = data.urlImage[index];
+                article.appendChild(p);
+            }
+        }).catch();
     }, false);
 
 
