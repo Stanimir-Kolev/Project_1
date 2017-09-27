@@ -21,7 +21,7 @@ y.addEventListener("blur", function () {
 var span1 = document.getElementById('nameSpan');
 var sub = document.getElementById('submit');
 
-sub.addEventListener('click', function () {
+sub.addEventListener('click', function (event) {
     var userName = document.getElementById('name');
     if (userName.value.length < 6) {
         span1.style.display = 'inline';

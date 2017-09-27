@@ -1,5 +1,19 @@
-// Butoni sort
 document.addEventListener('DOMContentLoaded', function () {
+    //     var tagoveLi = document.querySelectorAll('.aside-sort-content');
+    // var first = tagoveLi[0].setAttribute('clicked', 'on');
+    // var second = tagoveLi[1].setAttribute('clicked', 'off');
+    // var third = tagoveLi[2].setAttribute('clicked', 'off');
+    // tagoveLi.forEach(function(x) {
+    //     x.addEventListener('click', function() {
+    //         if (x.getAttribute('clicked') == 'off') {
+    //             var toziEOn = tagoveLi.find(y => y.getAttribute('clicked') == 'on');
+    //             toziEOn.setAttribute('clicked', 'off');
+    //             x.className = "aside-sort-content-on";
+    //             x.setAttribute('clicked', 'on');
+    //         }
+    //     }, false);
+    // });
+    // Butoni sort
     var elementLi = document.querySelectorAll('.aside-sort-content');
     elementLi.forEach(function (x) {
         x.setAttribute('clicked', 'false')

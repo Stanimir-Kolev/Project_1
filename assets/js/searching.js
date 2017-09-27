@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-
+//search button
+document.addEventListener('DOMContentLoaded', function () {
     var butSearch = document.getElementById("search-img");
-    butSearch.addEventListener("click", function() {
+    butSearch.addEventListener("click", function () {
 
         butSearch.style.display = "none";
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spanche.textContent = "x";
         divche.appendChild(spanche);
 
-        spanche.addEventListener("click", function() {
+        spanche.addEventListener("click", function () {
             butSearch.style.display = "inline-block";
             divche.style.display = "none";
 
