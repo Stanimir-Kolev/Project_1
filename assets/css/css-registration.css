@@ -28,7 +28,6 @@ label {
 .pick-info-box {
     width: 45%;
     display: inline-block;
-    float: left;
     text-align: center;
     margin-left: 25px;
 }
@@ -71,21 +70,6 @@ label {
 #submit {
     font-size: 1.2em;
 }
-
-#userError {
-    display: none;
-    margin-left: 5px;
-    font-size: 0.8em;
-    color: red;
-}
-
-#passError {
-    display: none;
-    margin-left: 5px;
-    font-size: 0.8em;
-    color: red;
-}
-
 #fbl-btn {
     background-color: #455ea1;
     font-size: 1.2em;
