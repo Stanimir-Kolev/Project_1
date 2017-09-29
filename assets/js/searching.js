@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelector(".section-content").style.display = "inline-block";
                 document.querySelector("#search-content").style.display = "none";
 
+                document.getElementById("searching-feeld").removeChild(divche);
+
             })
             ////// sled kato e razpunat inputa za search ///////////////////
         document.querySelector("#search-button-nav").addEventListener("click", function() {

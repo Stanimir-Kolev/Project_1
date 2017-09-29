@@ -181,6 +181,7 @@ main {
     display: inline-block;
     height: 197px;
     margin: 0 10px;
+    cursor: pointer;
 }
 
 .news-box>img {
