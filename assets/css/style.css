@@ -181,6 +181,7 @@ main {
     display: inline-block;
     height: 197px;
     margin: 0 10px;
+    cursor: pointer;
 }
 
 .news-box>img {
@@ -248,7 +249,7 @@ main {
     display: inline-block;
     font-size: 1.3em;
     cursor: pointer;
-    width: 32.5%;
+    width: 32.55%;
     line-height: 40px;
 }
 
@@ -256,10 +257,11 @@ main {
     display: inline-block;
     font-size: 1.3em;
     cursor: pointer;
-    width: 32.6%;
+    width: 32.55%;
     line-height: 40px;
     padding-bottom: 5px;
     background-color: #94908B;
+    font-weight: bolder;
 }
 
 #aside-sort>div>p>span {

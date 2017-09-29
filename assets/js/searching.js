@@ -36,7 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 searchCont.style.display = "none";
                 // cont.removeChild(divche);
-            })
+                });
+
+                // document.getElementById("searching-feeld").removeChild(divche);
+
             ////// sled kato e razpunat inputa za search ///////////////////
             butonka.addEventListener("click", function () {
                 document.querySelectorAll(".section-content").forEach(function (x) {
