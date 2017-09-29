@@ -31,7 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
         spanche.addEventListener("click", function() {
                 butSearch.style.display = "inline-block";
                 divche.style.display = "none";
-                document.querySelector(".section-content").style.display = "inline-block";
+                document.querySelector(".section-content").forEach(function(x) {
+                    x.style.display = "inline-block";
+                });
                 document.querySelector("#search-content").style.display = "none";
 
             })
