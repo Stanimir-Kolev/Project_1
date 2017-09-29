@@ -218,7 +218,6 @@ main {
 .section-content>section {
     display: inline-block;
     width: 100%;
-
 }
 
 .section-content>section:first-of-type {
@@ -435,37 +434,38 @@ footer {
     cursor: pointer;
 }
 
-
-#userIn{
+#userIn {
     /*display: none;*/
     font-size: 0.8em;
     color: #6B0000;
 }
 
+
 /* css for searching box */
 
-
- 
-/*#section-content {
+#search-content {
     background-color: #C6BEB5;
     text-align: left;
+    display: none;
+    width: 67%;
 }
 
-#section-content>h2 {
+#search-content>h2 {
     padding: 0 0 0 20px;
+    text-align: center;
 }
 
-#section-content>form {
-    width: 65%;
+#search-content>form {
+    /* width: 75%; */
     padding: 0 0 20px 20px;
 }
 
-#section-content>form>div>div {
+#search-content>form>div>div {
     display: inline-block;
     width: 30%;
 }
 
-#section-content>form>div>label {
+#search-content>form>div>label {
     width: 35%;
 }
 
@@ -474,7 +474,7 @@ footer {
     height: 30px;
 }
 
-#section-content>form>div>select {
+#search-content>form>div>select {
     width: 260px;
     height: 30px;
 }
@@ -505,4 +505,4 @@ footer {
 
 #search-result-mini>article>div {
     padding: 20px 10px;
-} */
+}
