@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //         }
     //     }, false);
     // });
-        //Novini
+    //Novini
 
     var novini = document.getElementById('novini-content');
     getNews('focus').then(function (data) {
@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var sudurjanie = document.querySelector('#novini > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
+
             for (var index = 0; index < 6; index++) {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
