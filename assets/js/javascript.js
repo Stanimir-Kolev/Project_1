@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     //     var tagoveLi = document.querySelectorAll('.aside-sort-content');
     // var first = tagoveLi[0].setAttribute('clicked', 'on');
     // var second = tagoveLi[1].setAttribute('clicked', 'off');
@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
     //         }
     //     }, false);
     // });
-    //Novini
+        //Novini
 
     var novini = document.getElementById('novini-content');
-    getNews('focus').then(function(data) {
+    getNews('focus').then(function (data) {
         var sudurjanie = document.querySelector('#novini > #content > .section-content');
         var section = document.createElement('section');
         sudurjanie.appendChild(section);
@@ -41,16 +41,41 @@ document.addEventListener('DOMContentLoaded', function() {
             var article = document.createElement('article');
             article.setAttribute('class', 'news-box');
             section.appendChild(article);
-            var image = document.createElement('img');
-            var p = document.createElement('p');
+            let image = document.createElement('img');
+            let p = document.createElement('p');
+            // var title1 = document.createElement('p');
+            let title1 = data.title[index];
+            let pub = data.published[index];
+            let author1 = data.author[index];
             p.textContent = data.description[index];
             article.appendChild(image);
             image.src = data.urlImage[index];
             article.appendChild(p);
+            image.addEventListener('click', function () {
+                document.querySelector('.section-content > section').style.display = 'none';
+                var bigArticle = document.createElement('div');
+                bigArticle.setAttribute('class', 'big-news-box');
+                document.querySelector('.section-content').appendChild(bigArticle);
+                var title = document.createElement("h2");
+                title.textContent = title1;
+                title.style.fontWeight = 'bold';
+                bigArticle.appendChild(title);
+                var img1 = document.createElement('img');
+                img1.src = image.src;
+                bigArticle.appendChild(img1);
+                var description = document.createElement("p");
+                description.textContent = p.textContent;
+                bigArticle.appendChild(description);
+                var author = document.createElement('p');
+                author.textContent = 'Author: ' + author1;
+                bigArticle.appendChild(author);
+                var published = document.createElement('p');
+                published.textContent = 'Date: ' + pub;
+                bigArticle.appendChild(published);
+            }, false);
         }
     }).catch();
-    var isClicked = false;
-    novini.addEventListener('click', function() {
+    novini.addEventListener('click', function () {
         event.preventDefault();
         document.querySelector('#novini > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -71,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         noviniDiv.style.width = 98 + '%';
         noviniDiv.style.margin = 'auto';
         noviniDiv.style.marginTop = -10 + 'px';
-        getNews('focus').then(function(data) {
+        getNews('focus').then(function (data) {
             var sudurjanie = document.querySelector('#novini > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -79,20 +104,46 @@ document.addEventListener('DOMContentLoaded', function() {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
                 section.appendChild(article);
-                var image = document.createElement('img');
-                var p = document.createElement('p');
+                let image = document.createElement('img');
+                let p = document.createElement('p');
+                let title1 = data.title[index];
+                let pub = data.published[index];
+                let author1 = data.author[index];
                 p.textContent = data.description[index];
                 article.appendChild(image);
                 image.src = data.urlImage[index];
                 article.appendChild(p);
+                image.addEventListener('click', function () {
+                    document.querySelector('.section-content > section').innerHTML = '';
+                    var bigArticle = document.createElement('div');
+                    bigArticle.setAttribute('class', 'big-news-box');
+                    document.querySelector('.section-content').appendChild(bigArticle);
+                    var title = document.createElement("h2");
+                    title.textContent = title1;
+                    title.style.fontWeight = 'bold';
+                    bigArticle.appendChild(title);
+                    var img1 = document.createElement('img');
+                    img1.src = image.src;
+                    bigArticle.appendChild(img1);
+                    var description = document.createElement("p");
+                    description.textContent = p.textContent;
+                    bigArticle.appendChild(description);
+                    var author = document.createElement('p');
+                    author.textContent = 'Author: ' + author1;
+                    bigArticle.appendChild(author);
+                    var published = document.createElement('p');
+                    published.textContent = 'Date: ' + pub;
+                    bigArticle.appendChild(published);
+                }, false);
             }
+
         }).catch();
 
     }, false);
 
     // Svqt
     var svqt = document.getElementById('svqt-content');
-    svqt.addEventListener('click', function() {
+    svqt.addEventListener('click', function () {
         event.preventDefault();
         document.querySelector('#svqt > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -113,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
         svqtdiv.style.width = 98 + '%';
         svqtdiv.style.margin = 'auto';
         svqtdiv.style.marginTop = -10 + 'px';
-        getNews('cnn').then(function(data) {
+        getNews('CNN').then(function (data) {
             var sudurjanie = document.querySelector('#svqt > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -121,19 +172,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
                 section.appendChild(article);
-                var image = document.createElement('img');
-                var p = document.createElement('p');
+                let image = document.createElement('img');
+                let p = document.createElement('p');
+                let title1 = data.title[index];
+                let pub = data.published[index];
+                let author1 = data.author[index];
                 p.textContent = data.description[index];
                 article.appendChild(image);
                 image.src = data.urlImage[index];
                 article.appendChild(p);
+                image.addEventListener('click', function () {
+                    document.querySelector('#svqt  section').style.display = 'none';
+                    var bigArticle = document.createElement('div');
+                    bigArticle.setAttribute('class', 'big-news-box');
+                    document.querySelector('#svqt .section-content').appendChild(bigArticle);
+                    var title = document.createElement("h1");
+                    title.textContent = title1;
+                    bigArticle.appendChild(title);
+                    var img1 = document.createElement('img');
+                    img1.src = image.src;
+                    bigArticle.appendChild(img1);
+                    var description = document.createElement("p");
+                    description.textContent = p.textContent;
+                    bigArticle.appendChild(description);
+                    var author = document.createElement('p');
+                    author.textContent = 'Author: ' + author1;
+                    bigArticle.appendChild(author);
+                    var published = document.createElement('p');
+                    published.textContent = 'Date: ' + pub;
+                    bigArticle.appendChild(published);
+                }, false);
             }
         }).catch();
     }, false);
 
     //sport
     var sport = document.getElementById('sport-content');
-    sport.addEventListener('click', function() {
+    sport.addEventListener('click', function () {
         event.preventDefault();
         document.querySelector('#sport > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -154,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
         sportdiv.style.width = 98 + '%';
         sportdiv.style.margin = 'auto';
         sportdiv.style.marginTop = -10 + 'px';
-        getNews('bbc-sport').then(function(data) {
+        getNews('bbc-sport').then(function (data) {
             var sudurjanie = document.querySelector('#sport > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -162,19 +237,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
                 section.appendChild(article);
-                var image = document.createElement('img');
-                var p = document.createElement('p');
+                let image = document.createElement('img');
+                let p = document.createElement('p');
+                let title1 = data.title[index];
+                let pub = data.published[index];
+                let author1 = data.author[index];
                 p.textContent = data.description[index];
                 article.appendChild(image);
                 image.src = data.urlImage[index];
                 article.appendChild(p);
+                image.addEventListener('click', function () {
+                    document.querySelector('#sport  section').style.display = 'none';
+                    var bigArticle = document.createElement('div');
+                    bigArticle.setAttribute('class', 'big-news-box');
+                    document.querySelector('#sport .section-content').appendChild(bigArticle);
+                    var title = document.createElement("h1");
+                    title.textContent = title1;
+                    bigArticle.appendChild(title);
+                    var img1 = document.createElement('img');
+                    img1.src = image.src;
+                    bigArticle.appendChild(img1);
+                    var description = document.createElement("p");
+                    description.textContent = p.textContent;
+                    bigArticle.appendChild(description);
+                    var author = document.createElement('p');
+                    author.textContent = 'Author: ' + author1;
+                    bigArticle.appendChild(author);
+                    var published = document.createElement('p');
+                    published.textContent = 'Date: ' + pub;
+                    bigArticle.appendChild(published);
+                }, false);
             }
         }).catch();
     }, false);
 
     //politika
     var politika = document.getElementById('politika-content');
-    politika.addEventListener('click', function() {
+    politika.addEventListener('click', function () {
         event.preventDefault();
         document.querySelector('#politika > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -195,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
         politikaDiv.style.width = 98 + '%';
         politikaDiv.style.margin = 'auto';
         politikaDiv.style.marginTop = -10 + 'px';
-        getNews('business-insider').then(function(data) {
+        getNews('business-insider').then(function (data) {
             var sudurjanie = document.querySelector('#politika > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -203,19 +302,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
                 section.appendChild(article);
-                var image = document.createElement('img');
-                var p = document.createElement('p');
+                let image = document.createElement('img');
+                let p = document.createElement('p');
+                let title1 = data.title[index];
+                let pub = data.published[index];
+                let author1 = data.author[index];
                 p.textContent = data.description[index];
                 article.appendChild(image);
                 image.src = data.urlImage[index];
                 article.appendChild(p);
+                image.addEventListener('click', function () {
+                    document.querySelector('#politika  section').style.display = 'none';
+                    var bigArticle = document.createElement('div');
+                    bigArticle.setAttribute('class', 'big-news-box');
+                    document.querySelector('#politika .section-content').appendChild(bigArticle);
+                    var title = document.createElement("h1");
+                    title.textContent = title1;
+                    bigArticle.appendChild(title);
+                    var img1 = document.createElement('img');
+                    img1.src = image.src;
+                    bigArticle.appendChild(img1);
+                    var description = document.createElement("p");
+                    description.textContent = p.textContent;
+                    bigArticle.appendChild(description);
+                    var author = document.createElement('p');
+                    author.textContent = 'Author: ' + author1;
+                    bigArticle.appendChild(author);
+                    var published = document.createElement('p');
+                    published.textContent = 'Date: ' + pub;
+                    bigArticle.appendChild(published);
+                }, false);
             }
         }).catch();
     }, false);
 
     //galeriq
     var galeriq = document.getElementById('galeriq-content');
-    galeriq.addEventListener('click', function() {
+    galeriq.addEventListener('click', function () {
         event.preventDefault();
         document.querySelector('#galeriq > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -236,7 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
         galeriqDiv.style.width = 98 + '%';
         galeriqDiv.style.margin = 'auto';
         galeriqDiv.style.marginTop = -10 + 'px';
-        getNews('fortune').then(function(data) {
+        getNews('fortune').then(function (data) {
             var sudurjanie = document.querySelector('#galeriq > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -244,19 +367,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
                 section.appendChild(article);
-                var image = document.createElement('img');
-                var p = document.createElement('p');
+                let image = document.createElement('img');
+                let p = document.createElement('p');
+                let title1 = data.title[index];
+                let pub = data.published[index];
+                let author1 = data.author[index];
                 p.textContent = data.description[index];
                 article.appendChild(image);
                 image.src = data.urlImage[index];
                 article.appendChild(p);
+                image.addEventListener('click', function () {
+                    document.querySelector('#galeriq  section').style.display = 'none';
+                    var bigArticle = document.createElement('div');
+                    bigArticle.setAttribute('class', 'big-news-box');
+                    document.querySelector('#galeriq .section-content').appendChild(bigArticle);
+                    var title = document.createElement("h1");
+                    title.textContent = title1;
+                    bigArticle.appendChild(title);
+                    var img1 = document.createElement('img');
+                    img1.src = image.src;
+                    bigArticle.appendChild(img1);
+                    var description = document.createElement("p");
+                    description.textContent = p.textContent;
+                    bigArticle.appendChild(description);
+                    var author = document.createElement('p');
+                    author.textContent = 'Author: ' + author1;
+                    bigArticle.appendChild(author);
+                    var published = document.createElement('p');
+                    published.textContent = 'Date: ' + pub;
+                    bigArticle.appendChild(published);
+                }, false);
             }
         }).catch();
     }, false);
 
     //tehnologii
     var tehnologii = document.getElementById('tehnologii-content');
-    tehnologii.addEventListener('click', function() {
+    tehnologii.addEventListener('click', function () {
         event.preventDefault();
         document.querySelector('#tehnologii > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -277,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function() {
         tehnologiiDiv.style.width = 98 + '%';
         tehnologiiDiv.style.margin = 'auto';
         tehnologiiDiv.style.marginTop = -10 + 'px';
-        getNews('buzzfeed').then(function(data) {
+        getNews('buzzfeed').then(function (data) {
             var sudurjanie = document.querySelector('#tehnologii > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -285,19 +432,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
                 section.appendChild(article);
-                var image = document.createElement('img');
-                var p = document.createElement('p');
+                let image = document.createElement('img');
+                let p = document.createElement('p');
+                let title1 = data.title[index];
+                let pub = data.published[index];
+                let author1 = data.author[index];
                 p.textContent = data.description[index];
                 article.appendChild(image);
                 image.src = data.urlImage[index];
                 article.appendChild(p);
+                image.addEventListener('click', function () {
+                    document.querySelector('#tehnologii  section').style.display = 'none';
+                    var bigArticle = document.createElement('div');
+                    bigArticle.setAttribute('class', 'big-news-box');
+                    document.querySelector('#tehnologii .section-content').appendChild(bigArticle);
+                    var title = document.createElement("h1");
+                    title.textContent = title1;
+                    bigArticle.appendChild(title);
+                    var img1 = document.createElement('img');
+                    img1.src = image.src;
+                    bigArticle.appendChild(img1);
+                    var description = document.createElement("p");
+                    description.textContent = p.textContent;
+                    bigArticle.appendChild(description);
+                    var author = document.createElement('p');
+                    author.textContent = 'Author: ' + author1;
+                    bigArticle.appendChild(author);
+                    var published = document.createElement('p');
+                    published.textContent = 'Date: ' + pub;
+                    bigArticle.appendChild(published);
+                }, false);
             }
         }).catch();
     }, false);
 
     //zdrave
     var zdrave = document.getElementById('zdrave-content');
-    zdrave.addEventListener('click', function() {
+    zdrave.addEventListener('click', function () {
         event.preventDefault();
         document.querySelector('#zdrave > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -318,7 +489,7 @@ document.addEventListener('DOMContentLoaded', function() {
         zdraveDiv.style.width = 98 + '%';
         zdraveDiv.style.margin = 'auto';
         zdraveDiv.style.marginTop = -10 + 'px';
-        getNews('independent').then(function(data) {
+        getNews('independent').then(function (data) {
             var sudurjanie = document.querySelector('#zdrave > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -326,12 +497,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
                 section.appendChild(article);
-                var image = document.createElement('img');
-                var p = document.createElement('p');
+                let image = document.createElement('img');
+                let p = document.createElement('p');
+                let title1 = data.title[index];
+                let pub = data.published[index];
+                let author1 = data.author[index];
                 p.textContent = data.description[index];
                 article.appendChild(image);
                 image.src = data.urlImage[index];
                 article.appendChild(p);
+                image.addEventListener('click', function () {
+                    document.querySelector('#zdrave  section').style.display = 'none';
+                    var bigArticle = document.createElement('div');
+                    bigArticle.setAttribute('class', 'big-news-box');
+                    document.querySelector('#zdrave .section-content').appendChild(bigArticle);
+                    var title = document.createElement("h1");
+                    title.textContent = title1;
+                    bigArticle.appendChild(title);
+                    var img1 = document.createElement('img');
+                    img1.src = image.src;
+                    bigArticle.appendChild(img1);
+                    var description = document.createElement("p");
+                    description.textContent = p.textContent;
+                    bigArticle.appendChild(description);
+                    var author = document.createElement('p');
+                    author.textContent = 'Author: ' + author1;
+                    bigArticle.appendChild(author);
+                    var published = document.createElement('p');
+                    published.textContent = 'Date: ' + pub;
+                    bigArticle.appendChild(published);
+                }, false);
             }
         }).catch();
     }, false);
@@ -342,7 +537,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var reg = document.getElementById('reg');
 
-    reg.addEventListener('click', function() {
+    reg.addEventListener('click', function () {
         var regDiv = document.getElementById('sign-up');
         var vhodDiv = document.getElementById('sign-in');
         var formVhod = document.getElementById('formVhod');
@@ -358,7 +553,7 @@ document.addEventListener('DOMContentLoaded', function() {
         regDiv.style.left = 498 + 'px';
         //Registry
         var subReg = document.getElementById('subReg');
-        subReg.addEventListener('click', function(event) {
+        subReg.addEventListener('click', function (event) {
             event.preventDefault();
             var errorReg = document.getElementById('errorReg');
             var username = document.getElementById('username1').value;
@@ -390,14 +585,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }, false);
         //close button;
         var closeReg = document.getElementById('close1');
-        closeReg.addEventListener('click', function() {
+        closeReg.addEventListener('click', function () {
             regDiv.style.display = 'none';
         }, false);
     }, false);
 
     var vhod = document.getElementById('vhod');
     // sign up button
-    vhod.addEventListener('click', function() {
+    vhod.addEventListener('click', function () {
         var regDiv = document.getElementById('sign-up');
         var vhodDiv = document.getElementById('sign-in');
         var formVhod = document.getElementById('formVhod');
@@ -412,7 +607,7 @@ document.addEventListener('DOMContentLoaded', function() {
         vhodDiv.style.top = 140 + 'px';
         vhodDiv.style.left = 498 + 'px';
         // login
-        subLogin.addEventListener('click', function(event) {
+        subLogin.addEventListener('click', function (event) {
             var error = document.getElementById('error');
             event.preventDefault();
             var username = document.getElementById('username').value;
@@ -433,7 +628,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, false);
         //close button;
         var closeVhod = document.getElementById('close');
-        closeVhod.addEventListener('click', function() {
+        closeVhod.addEventListener('click', function () {
             vhodDiv.style.display = 'none';
         }, false);
     }, false);

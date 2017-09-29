@@ -325,7 +325,15 @@ main {
     height: 40px;
     margin: 0;
 }
-
+#content>.section-content>.big-news-box {
+    background-color: #C6BEB5;
+    text-align: left;
+    width: 100%;
+    float: left;
+}
+#content>.section-content>.big-news-box>img{
+    width: 100%;
+}
 
 /* footer */
 
