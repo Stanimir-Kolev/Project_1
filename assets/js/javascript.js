@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     //     var tagoveLi = document.querySelectorAll('.aside-sort-content');
     // var first = tagoveLi[0].setAttribute('clicked', 'on');
     // var second = tagoveLi[1].setAttribute('clicked', 'off');
@@ -14,43 +14,43 @@ document.addEventListener('DOMContentLoaded', function () {
     //     }, false);
     // });
     // Butoni sort
-    var elementLi = document.querySelectorAll('.aside-sort-content');
-    elementLi.forEach(function (x) {
-        x.setAttribute('clicked', 'false')
-        x.addEventListener('click', function () {
-            var asideContent = document.getElementById('aside-content');
-            if (x.getAttribute('clicked') == 'false') {
-                x.style.paddingBottom = 10 + 'px';
-                asideContent.style.marginTop = -10 + 'px';
-                x.setAttribute('clicked', 'true');
-            } else {
-                x.style.paddingBottom = 0 + 'px';
-                asideContent.style.marginTop = -10 + 'px';
-                x.setAttribute('clicked', 'false');
-            }
-        }, false);
-    });
+    // var elementLi = document.querySelectorAll('.aside-sort-content');
+    // elementLi.forEach(function (x) {
+    //     x.setAttribute('clicked', 'false')
+    //     x.addEventListener('click', function () {
+    //         var asideContent = document.getElementById('aside-content');
+    //         if (x.getAttribute('clicked') == 'false') {
+    //             x.style.paddingBottom = 10 + 'px';
+    //             asideContent.style.marginTop = -10 + 'px';
+    //             x.setAttribute('clicked', 'true');
+    //         } else {
+    //             x.style.paddingBottom = 0 + 'px';
+    //             asideContent.style.marginTop = -10 + 'px';
+    //             x.setAttribute('clicked', 'false');
+    //         }
+    //     }, false);
+    // });
     //Novini
 
     var novini = document.getElementById('novini-content');
-     getNews('focus').then(function (data) {
-                var sudurjanie = document.querySelector('#novini > #content > .section-content');
-                var section = document.createElement('section');
-                sudurjanie.appendChild(section);
-            for (var index = 0; index < 6; index++) {
-                var article = document.createElement('article');
-                article.setAttribute('class', 'news-box');
-                section.appendChild(article);
-                var image = document.createElement('img');
-                var p = document.createElement('p');
-                p.textContent = data.description[index];
-                article.appendChild(image);
-                image.src = data.urlImage[index];
-                article.appendChild(p);
-            }
-        }).catch();
+    getNews('focus').then(function(data) {
+        var sudurjanie = document.querySelector('#novini > #content > .section-content');
+        var section = document.createElement('section');
+        sudurjanie.appendChild(section);
+        for (var index = 0; index < 6; index++) {
+            var article = document.createElement('article');
+            article.setAttribute('class', 'news-box');
+            section.appendChild(article);
+            var image = document.createElement('img');
+            var p = document.createElement('p');
+            p.textContent = data.description[index];
+            article.appendChild(image);
+            image.src = data.urlImage[index];
+            article.appendChild(p);
+        }
+    }).catch();
     var isClicked = false;
-    novini.addEventListener('click', function () {
+    novini.addEventListener('click', function() {
         event.preventDefault();
         document.querySelector('#novini > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -71,10 +71,10 @@ document.addEventListener('DOMContentLoaded', function () {
         noviniDiv.style.width = 98 + '%';
         noviniDiv.style.margin = 'auto';
         noviniDiv.style.marginTop = -10 + 'px';
-        getNews('focus').then(function (data) {
-                var sudurjanie = document.querySelector('#novini > #content > .section-content');
-                var section = document.createElement('section');
-                sudurjanie.appendChild(section);
+        getNews('focus').then(function(data) {
+            var sudurjanie = document.querySelector('#novini > #content > .section-content');
+            var section = document.createElement('section');
+            sudurjanie.appendChild(section);
             for (var index = 0; index < 6; index++) {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Svqt
     var svqt = document.getElementById('svqt-content');
-    svqt.addEventListener('click', function () {
+    svqt.addEventListener('click', function() {
         event.preventDefault();
         document.querySelector('#svqt > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -113,10 +113,10 @@ document.addEventListener('DOMContentLoaded', function () {
         svqtdiv.style.width = 98 + '%';
         svqtdiv.style.margin = 'auto';
         svqtdiv.style.marginTop = -10 + 'px';
-        getNews('cnn').then(function (data) {
-                var sudurjanie = document.querySelector('#svqt > #content > .section-content');
-                var section = document.createElement('section');
-                sudurjanie.appendChild(section);
+        getNews('cnn').then(function(data) {
+            var sudurjanie = document.querySelector('#svqt > #content > .section-content');
+            var section = document.createElement('section');
+            sudurjanie.appendChild(section);
             for (var index = 0; index < 6; index++) {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //sport
     var sport = document.getElementById('sport-content');
-    sport.addEventListener('click', function () {
+    sport.addEventListener('click', function() {
         event.preventDefault();
         document.querySelector('#sport > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -154,10 +154,10 @@ document.addEventListener('DOMContentLoaded', function () {
         sportdiv.style.width = 98 + '%';
         sportdiv.style.margin = 'auto';
         sportdiv.style.marginTop = -10 + 'px';
-        getNews('bbc-sport').then(function (data) {
-                var sudurjanie = document.querySelector('#sport > #content > .section-content');
-                var section = document.createElement('section');
-                sudurjanie.appendChild(section);
+        getNews('bbc-sport').then(function(data) {
+            var sudurjanie = document.querySelector('#sport > #content > .section-content');
+            var section = document.createElement('section');
+            sudurjanie.appendChild(section);
             for (var index = 0; index < 6; index++) {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //politika
     var politika = document.getElementById('politika-content');
-    politika.addEventListener('click', function () {
+    politika.addEventListener('click', function() {
         event.preventDefault();
         document.querySelector('#politika > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -195,10 +195,10 @@ document.addEventListener('DOMContentLoaded', function () {
         politikaDiv.style.width = 98 + '%';
         politikaDiv.style.margin = 'auto';
         politikaDiv.style.marginTop = -10 + 'px';
-        getNews('business-insider').then(function (data) {
-                var sudurjanie = document.querySelector('#politika > #content > .section-content');
-                var section = document.createElement('section');
-                sudurjanie.appendChild(section);
+        getNews('business-insider').then(function(data) {
+            var sudurjanie = document.querySelector('#politika > #content > .section-content');
+            var section = document.createElement('section');
+            sudurjanie.appendChild(section);
             for (var index = 0; index < 6; index++) {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //galeriq
     var galeriq = document.getElementById('galeriq-content');
-    galeriq.addEventListener('click', function () {
+    galeriq.addEventListener('click', function() {
         event.preventDefault();
         document.querySelector('#galeriq > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -236,10 +236,10 @@ document.addEventListener('DOMContentLoaded', function () {
         galeriqDiv.style.width = 98 + '%';
         galeriqDiv.style.margin = 'auto';
         galeriqDiv.style.marginTop = -10 + 'px';
-        getNews('fortune').then(function (data) {
-                var sudurjanie = document.querySelector('#galeriq > #content > .section-content');
-                var section = document.createElement('section');
-                sudurjanie.appendChild(section);
+        getNews('fortune').then(function(data) {
+            var sudurjanie = document.querySelector('#galeriq > #content > .section-content');
+            var section = document.createElement('section');
+            sudurjanie.appendChild(section);
             for (var index = 0; index < 6; index++) {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //tehnologii
     var tehnologii = document.getElementById('tehnologii-content');
-    tehnologii.addEventListener('click', function () {
+    tehnologii.addEventListener('click', function() {
         event.preventDefault();
         document.querySelector('#tehnologii > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -277,10 +277,10 @@ document.addEventListener('DOMContentLoaded', function () {
         tehnologiiDiv.style.width = 98 + '%';
         tehnologiiDiv.style.margin = 'auto';
         tehnologiiDiv.style.marginTop = -10 + 'px';
-        getNews('buzzfeed').then(function (data) {
-                var sudurjanie = document.querySelector('#tehnologii > #content > .section-content');
-                var section = document.createElement('section');
-                sudurjanie.appendChild(section);
+        getNews('buzzfeed').then(function(data) {
+            var sudurjanie = document.querySelector('#tehnologii > #content > .section-content');
+            var section = document.createElement('section');
+            sudurjanie.appendChild(section);
             for (var index = 0; index < 6; index++) {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //zdrave
     var zdrave = document.getElementById('zdrave-content');
-    zdrave.addEventListener('click', function () {
+    zdrave.addEventListener('click', function() {
         event.preventDefault();
         document.querySelector('#zdrave > #content > .section-content').innerHTML = '';
         var svqtdiv = document.getElementById('svqt');
@@ -318,10 +318,10 @@ document.addEventListener('DOMContentLoaded', function () {
         zdraveDiv.style.width = 98 + '%';
         zdraveDiv.style.margin = 'auto';
         zdraveDiv.style.marginTop = -10 + 'px';
-        getNews('independent').then(function (data) {
-                var sudurjanie = document.querySelector('#zdrave > #content > .section-content');
-                var section = document.createElement('section');
-                sudurjanie.appendChild(section);
+        getNews('independent').then(function(data) {
+            var sudurjanie = document.querySelector('#zdrave > #content > .section-content');
+            var section = document.createElement('section');
+            sudurjanie.appendChild(section);
             for (var index = 0; index < 6; index++) {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var reg = document.getElementById('reg');
 
-    reg.addEventListener('click', function () {
+    reg.addEventListener('click', function() {
         var regDiv = document.getElementById('sign-up');
         var vhodDiv = document.getElementById('sign-in');
         var formVhod = document.getElementById('formVhod');
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function () {
         regDiv.style.left = 498 + 'px';
         //Registry
         var subReg = document.getElementById('subReg');
-        subReg.addEventListener('click', function (event) {
+        subReg.addEventListener('click', function(event) {
             event.preventDefault();
             var errorReg = document.getElementById('errorReg');
             var username = document.getElementById('username1').value;
@@ -390,14 +390,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }, false);
         //close button;
         var closeReg = document.getElementById('close1');
-        closeReg.addEventListener('click', function () {
+        closeReg.addEventListener('click', function() {
             regDiv.style.display = 'none';
         }, false);
     }, false);
 
     var vhod = document.getElementById('vhod');
     // sign up button
-    vhod.addEventListener('click', function () {
+    vhod.addEventListener('click', function() {
         var regDiv = document.getElementById('sign-up');
         var vhodDiv = document.getElementById('sign-in');
         var formVhod = document.getElementById('formVhod');
@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', function () {
         vhodDiv.style.top = 140 + 'px';
         vhodDiv.style.left = 498 + 'px';
         // login
-        subLogin.addEventListener('click', function (event) {
+        subLogin.addEventListener('click', function(event) {
             var error = document.getElementById('error');
             event.preventDefault();
             var username = document.getElementById('username').value;
@@ -433,9 +433,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }, false);
         //close button;
         var closeVhod = document.getElementById('close');
-        closeVhod.addEventListener('click', function () {
+        closeVhod.addEventListener('click', function() {
             vhodDiv.style.display = 'none';
         }, false);
     }, false);
 }, false);
-
