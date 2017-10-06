@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Аз събуждам България</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Аз събуждам България</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./assets/css/css-login.css">
     <link rel="stylesheet" href="./assets/css/css-registration.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="./assets/js/javascript.js"></script>
-    <script src="./assets/js/searching.js"></script>
-    <script src="./assets/js/loginService.js"></script>
-    <script src="./assets/js/jsMVC.js"></script>
-    <script src="./assets/js/functionaliti_for_aside_bar.js"></script>
+    <script src="./assets/js/NewsFilter.js"></script>
+    <script src="./assets/js/LoginService.js"></script>
+    <script src="./assets/js/APINews.js"></script>
+    <script src="./assets/js/AsideBar.js"></script>
+    <script src="./assets/js/LoginRegistrationController.js"></script>
+    <script src="./assets/js/CarouselImages.js"></script>
+
 </head>
 
 <body>
@@ -41,14 +44,14 @@
                 </ul>
             </div>
             <nav>
-                <ul>
-                    <li><a href="" id="novini-content">Начало</a></li>
-                    <li><a href="" id="svqt-content">Свят</a></li>
-                    <li><a href="" id="sport-content">Спорт</a></li>
-                    <li><a href="" id="politika-content">Политика</a></li>
-                    <li><a href="" id="galeriq-content">Галерия</a></li>
-                    <li><a href="" id="tehnologii-content">Технологии</a></li>
-                    <li><a href="" id="zdrave-content">Здраве</a></li>
+                <ul id="navigation-bar">
+                    <li><a href="" id="google-news">Начало</a></li>
+                    <li><a href="" id="CNN">Свят</a></li>
+                    <li><a href="" id="talksport">Спорт</a></li>
+                    <li><a href="" id="business-insider">Политика</a></li>
+                    <li><a href="" id="fortune">Галерия</a></li>
+                    <li><a href="" id="buzzfeed">Технологии</a></li>
+                    <li><a href="" id="independent">Здраве</a></li>
                 </ul>
             </nav>
         </header>
@@ -59,12 +62,12 @@
                     <fieldset>
                         <h2>ВХОД</h2>
                         <div><img id="close" title="close" src="http://blink.watch/images/close.png" alt=""></div>
-                        <div class="div">
+                        <div class="div-box">
                             <label for="" id="enterName">Потребителско име:</label>
                             <br/>
                             <input name="username" type="text" id="username">
                         </div>
-                        <div class="div">
+                        <div class="div-box">
                             <label for="" id="enterPass">Парола</label>
                             <br/>
                             <input name="pass" type="password" id="password">
@@ -76,12 +79,12 @@
                         <input name="pass" type="checkbox" id="repeatpassword" required> <span>Запомни ме на този компютър</span>
                         <br/>
                         <br/>
-                        <div class="div">
+                        <div class="div-box">
                             <input type="submit" value="ВХОД" id="subLogin">
                         </div>
                         <br/>
                         <br/>
-                        <a href="#" class="text-content">Направи нова регистрация</a>
+                        <a href="#" id="new-reg" class="text-content">Направи нова регистрация</a>
                         <br/>
                         <!--</div>-->
                     </fieldset>
@@ -95,79 +98,84 @@
                         <div><img id="close1" title="close" src="http://blink.watch/images/close.png" alt=""></div>
                         <p>Създаване на профил</p>
 
-                        <div class="div">
+                        <div class="div-box">
                             <label for="" id="enterName">Потребителско име:</label>
+                            <br/>
+                            <span id="errorUserReg">Вече има потребител с това име!</span>
                             <br/>
                             <input name="username" type="text" id="username1" placeholder="Потребителско име">
                         </div>
-                        <div class="div">
+                        <div class="div-box">
                             <label for="" id="enterPass">Парола</label>
+                            <br/>
+                            <span id="errorPass">(Трябва да съдържа главна,малка буква и цифра)</span>
                             <br/>
                             <input name="pass" type="password" id="password1" placeholder="Парола">
                         </div>
-                        <div class="div">
+                        <div class="div-box">
                             <label for="" id="enterPass">Потвърди парола</label>
                             <br/>
                             <input name="pass" type="password" id="repPass" placeholder="Парола">
                         </div>
-                        <div class="div">
+                        <div class="div-box">
                             <label for="" id="enterMail" placeholder="">E-mail:</label>
                             <br/>
                             <input name="email" type="text" id="email" placeholder="E-mail">
                             <p id='errorReg'></p>
                         </div>
-                        <div class="div">
+                        <div class="div-box">
                             <input type="submit" value="ПРОДЪЛЖИ" id="subReg">
                         </div>
                     </fieldset>
                 </form>
             </div>
-            <div id="novini">
-                <div class="container">
+            <!--NOVINI DIV-->
+            <div id="content">
+                <div id="container">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="carousel-image">
-                                    <img src="./assets/images/pesho.jpg">
-                                    <p>dadas das das das das das</p>
+                                    <img class="caroImg" src="">
+                                    <p class="caroPara"></p>
                                 </div>
                                 <div class="carousel-image">
-                                    <img src="./assets/images/pesho.jpg">
-                                    <p>dadas das das das das das</p>
+                                    <img class="caroImg" src="">
+                                    <p class="caroPara"></p>
                                 </div>
                                 <div class="carousel-image">
-                                    <img src="./assets/images/pesho.jpg">
-                                    <p>dadas das das das das das</p>
+                                    <img class="caroImg" src="">
+                                    <p class="caroPara"></p>
                                 </div>
                             </div>
 
                             <div class="item">
                                 <div class="carousel-image">
-                                    <img src="./assets/images/pesho.jpg">
-                                    <p>dadas das das das das das</p>
+                                    <img class="caroImg" src="">
+                                    <p class="caroPara"></p>
                                 </div>
                                 <div class="carousel-image">
-                                    <img src="./assets/images/pesho.jpg">
-                                    <p>dadas das das das das das</p>
+                                    <img class="caroImg" src="">
+                                    <p class="caroPara"></p>
                                 </div>
                                 <div class="carousel-image">
-                                    <img src="./assets/images/pesho.jpg">
-                                    <p>dadas das das das das das</p>
+                                    <img class="caroImg" src="">
+                                    <p class="caroPara"></p>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="carousel-image">
-                                    <img src="./assets/images/pesho.jpg">
-                                    <p>dadas das das das das das</p>
+                                    <img class="caroImg" src="">
+                                    <p class="caroPara"></p>
                                 </div>
                                 <div class="carousel-image">
-                                    <img src="./assets/images/pesho.jpg">
-                                    <p>dadas das das das das das</p>
+                                    <img class="caroImg" src="">
+                                    <p class="caroPara"></p>
                                 </div>
                                 <div class="carousel-image">
-                                    <img src="./assets/images/pesho.jpg">
-                                    <p>dadas das das das das das</p>
+                                    <img class="caroImg" src="">
+                                    <p class="caroPara"></p>
                                 </div>
                             </div>
                         </div>
@@ -184,8 +192,8 @@
                     </div>
                     <!--</div>-->
                 </div>
-                <div id="content">
-                    <div class="section-content">
+                <div id="section-content">
+                    <div id="novini">
                     </div>
                     <!--    TOva e search box-a      !!!!!!!!!!!!!!!!!!!!!!!!!!!                            -->
                     <div id="search-content">
@@ -210,289 +218,54 @@
                             <br>
                             <div>
                                 <label for="">Изберете категория: </label>
-                                <select name="" id="">
-                                <option value="" selected>Всички</option>
-                                <option value="">Свят</option>
-                                <option value="">Спорт</option>
-                                <option value="">Политика</option>
-                                <option value="">Технологии</option>
-                                <option value="">Здраве</option>
+                                <select name="" id="select-category">
+                                <option value="#">-------------------</option>
+                                <option value="All">Всички</option>
+                                <option value="focus">Фокус</option>
+                                <option value="CNN">Свят</option>
+                                <option value="bbc-sport">Спорт</option>
+                                <option value="business-insider">Политика</option>
+                                <option value="buzzfeed">Галерия</option>
+                                <option value="fortune">Технологии</option>
+                                <option value="independent">Здраве</option>
                             </select>
                             </div>
                             <br>
                             <div>
                                 <label for="">Търсене в: </label>
-                                <select name="" id="">
-                                <option value="" selected>Текст</option>
-                                <option value="">Заглавие</option>
-                                <option value="">Кратък текст</option>
-                                <option value="">Автор</option>
+                                <select name="" id="select-type">
+                                    <option value="All">------------------</option>
+                                <option value="description">Текст</option>
+                                <option value="title">Заглавие</option>
+                                <option value="author">Автор</option>
                             </select>
                             </div>
                             <br>
                             <button id="search-but">ТЪРСИ</button>
                         </form>
+
                         <div id="info-for-search">
-                            <p>Търсене за: </p>
-                            <span>Намерени са ..... резултата</span>
+
                         </div>
                         <div id="search-result-mini">
-                            <article class="found-news">
-                                <div>
-                                    <a href="">tuka e zaglavieto</a>
-                                    <br>
-                                    <span>Lorem ipsucta, . Quam repellendus sed obcaecati aspernatur delectus asperiores?</span>
-                                    <br>
-                                    <span>data</span> <span>kategorii v koito uchastva</span>
-                                </div>
-                            </article>
-                            <article class="found-news">
-                                <div>
-                                    <a href="">tuka e zaglavieto</a>
-                                    <br>
-                                    <span>Lorem ipsucta, . Quam repellendus sed obcaecati aspernatur delectus asperiores?</span>
-                                    <br>
-                                    <span>data</span> <span>kategorii v koito uchastva</span>
-                                </div>
-                            </article>
-                            <article class="found-news">
-                                <div>
-                                    <a href="">tuka e zaglavieto</a>
-                                    <br>
-                                    <span>Lorem ipsucta, . Quam repellendus sed obcaecati aspernatur delectus asperiores?</span>
-                                    <br>
-                                    <span>data</span> <span>kategorii v koito uchastva</span>
-                                </div>
-                            </article>
                         </div>
 
                     </div>
                     <!--  ...................................................................   -->
-                    <aside>
-                        <div id="aside-sort">
-                            <ul id="nav-aside-sort">
-                                <li id='aside-novini' class="aside-sort-content aside-sort-content-on">Нови</li>
-                                <li id='aside-stari' class="aside-sort-content">Стари</li>
-                                <li id='aside-sredni' class="aside-sort-content">Средни</li>
-                            </ul>
-                            <div id="aside-content">
-                                <p><span>1</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>2</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>3</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>4</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>5</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>6</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                            </div>
-                        </div>
+                </div>
+                <aside>
+                    <div id="aside-sort">
+                        <ul id="nav-aside-sort">
+                            <li id='allNews' class="aside-sort-content aside-sort-content-on">НОВИ</li>
+                            <li id='most-reading' class="aside-sort-content">ЧЕТЕНИ</li>
+                            <li id='most-coments' class="aside-sort-content">КОМЕНТИРАНИ</li>
+                        </ul>
+                        <div id="aside-content">
 
-                    </aside>
-                </div>
-            </div>
-            <!--SVQT DIV-->
-            <div id="svqt">
-                <div class="container">
-                </div>
-                <div id="content">
-                    <div class="section-content">
+                        </div>
                     </div>
-                    <aside>
-                        <div id="aside-sort">
-                            <ul id="nav-aside-sort">
-                                <li class='aside-sort-content-on'>Нови</li>
-                                <li class='aside-sort-content'>Стари</li>
-                                <li class='aside-sort-content'>Средни</li>
-                            </ul>
-                            <div id="aside-content">
-                                <p><span>1</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>2</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>3</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>4</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>5</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>6</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                            </div>
-                        </div>
 
-                    </aside>
-                </div>
-            </div>
-            <!--SPORT DIV-->
-            <div id="sport">
-                <div class="container">
-                </div>
-                <div id="content">
-                    <div class="section-content">
-                        <section>
-
-                        </section>
-                    </div>
-                    <aside>
-                        <div id="aside-sort">
-                            <ul id="nav-aside-sort">
-                                <li class='aside-sort-content-on'>Нови</li>
-                                <li class='aside-sort-content'>Стари</li>
-                                <li class='aside-sort-content'>Средни</li>
-                            </ul>
-                            <div id="aside-content">
-                                <p><span>1</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>2</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>3</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>4</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>5</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>6</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                            </div>
-                        </div>
-
-                    </aside>
-                </div>
-            </div>
-            <!--POLITIKA DIV-->
-            <div id="politika">
-                <div class="container">
-                </div>
-                <div id="content">
-                    <div class="section-content">
-                    </div>
-                    <aside>
-                        <div id="aside-sort">
-                            <ul id="nav-aside-sort">
-                                <li class='aside-sort-content-on'>Нови</li>
-                                <li class='aside-sort-content'>Стари</li>
-                                <li class='aside-sort-content'>Средни</li>
-                            </ul>
-                            <div id="aside-content">
-                                <p><span>1</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>2</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>3</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>4</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>5</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>6</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                            </div>
-                        </div>
-
-                    </aside>
-                </div>
-            </div>
-            <!--GALERIQ DIV-->
-            <div id="galeriq">
-                <div class="container">
-                </div>
-                <div id="content">
-                    <div class="section-content">
-                    </div>
-                    <aside>
-                        <div id="aside-sort">
-                            <ul id="nav-aside-sort">
-                                <li class='aside-sort-content-on'>Нови</li>
-                                <li class='aside-sort-content'>Стари</li>
-                                <li class='aside-sort-content'>Средни</li>
-                            </ul>
-                            <div id="aside-content">
-                                <p><span>1</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>2</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>3</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>4</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>5</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>6</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-            <!--TENOLOGII DIV-->
-            <div id="tehnologii">
-                <div class="container">
-                </div>
-                <div id="content">
-                    <div class="section-content">
-                    </div>
-                    <aside>
-                        <div id="aside-sort">
-                            <ul id="nav-aside-sort">
-                                <li class='aside-sort-content-on'>Нови</li>
-                                <li class='aside-sort-content'>Стари</li>
-                                <li class='aside-sort-content'>Средни</li>
-                            </ul>
-                            <div id="aside-content">
-                                <p><span>1</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>2</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>3</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>4</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>5</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>6</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                            </div>
-                        </div>
-
-                    </aside>
-                </div>
-            </div>
-            <!--ZDRAVE DIV-->
-            <div id="zdrave">
-                <div class="container">
-                </div>
-                <div id="content">
-                    <div class="section-content">
-                    </div>
-                    <aside>
-                        <div id="aside-sort">
-                            <ul id="nav-aside-sort">
-                                <li class='aside-sort-content-on'>Нови</li>
-                                <li class='aside-sort-content'>Стари</li>
-                                <li class='aside-sort-content'>Средни</li>
-                            </ul>
-                            <div id="aside-content">
-                                <p><span>1</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>2</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>3</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>4</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>5</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                                <p><span>6</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta harum deserunt facere, vero aperiam eligendi qui consequuntur hic temporibus aspernatur, aliquid dolorem, rerum est similique voluptatem debitis
-                                    sapiente optio laboriosam.</p>
-                            </div>
-                        </div>
-
-                    </aside>
-                </div>
+                </aside>
             </div>
         </main>
         <footer>
@@ -506,17 +279,23 @@
             </div>
             <div class="footer-social">
                 <div class="social-icons">
-                    <a href="#" class="icon-sprite" id="twitter-sprite">
+                    <a target="_blank" href="https://twitter.com/" class="icon-sprite" id="twitter-sprite">
                         <span>twitter</span>
                     </a>
-                    <a href="# " class="icon-sprite" id="facebook-sprite">
+                    <a target="_blank" href="https://facebook.com/" class="icon-sprite" id="facebook-sprite">
                         <span>facebook</span>
                     </a>
-                    <a href="# " class="icon-sprite" id="google-sprite">
+                    <a target="_blank" href="https://plus.google.com/" class="icon-sprite" id="google-sprite">
                         <span>google</span>
                     </a>
-                    <a href="# " class="icon-sprite" id="instagram-sprite">
+                    <a target="_blank" href="https://www.instagram.com/" class="icon-sprite" id="instagram-sprite">
                         <span>instagram</span>
+                    </a>
+                    <a target="_blank" href="https://youtube.com/" class="icon-sprite" id="youtube-sprite">
+                        <span>youtube</span>
+                    </a>
+                    <a target="_blank" href="https://linkedin.com/" class="icon-sprite" id="linkedin-sprite">
+                        <span>linkedin</span>
                     </a>
                 </div>
             </div>

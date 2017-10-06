@@ -14,19 +14,20 @@ var userList = (function () {
             localStorage.setItem('users', JSON.stringify(this._users));
         }
     }
-
     UserList.prototype.addUser = function (username, password, repeatPassword, email) {
         if (typeof username === 'string' && username.trim().length > 3 && email) {
-            console.log('aaaaa');
-            if ((typeof password === 'string') && (password.trim().length > 7) &&
-                (password === repeatPassword) && (password.match(/\d+/) || password.match(/A-Z/) ||
-                    password.match(/a-z/))) {
-                console.log('bravo bravo');
+            if ((typeof password === 'string') && (password.trim().length > 5) &&
+                (password === repeatPassword) && (password.match(/\d+/) || password.match(/[A-Z]/) ||
+                    password.match(/[a-z]/))) {
                 if (!(this._users.some(user => user.username === username))) {
                     this._users.push(new User(username, password, repeatPassword, email));
                     localStorage.setItem('users', JSON.stringify(this._users));
                     return true;
+                } else {
+                    $('#errorUserReg').css({ display: 'inline', color: 'red' });
                 }
+            } else {
+                $('#errorPass').css('color', 'red');
             }
         }
     }

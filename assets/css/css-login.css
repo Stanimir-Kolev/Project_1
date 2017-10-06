@@ -1,11 +1,15 @@
-/* signup*/
-
+/* login*/
+@font-face {
+    font-family: 'Fira Sans Extra Condensed';
+    font-style: normal;
+    src: url("../fonts/Fira_Sans_Extra_Condensed/FiraSansExtraCondensed-Regular.ttf");
+}
 fieldset {
     text-align: center;
     background-color: #C6BEB5;
 }
 
-.div {
+.div-box {
     margin: 5px;
     padding: 5px;
 }

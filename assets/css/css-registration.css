@@ -1,5 +1,9 @@
-/* signup*/
-
+/* reg*/
+@font-face {
+    font-family: 'Fira Sans Extra Condensed';
+    font-style: normal;
+    src: url("../fonts/Fira_Sans_Extra_Condensed/FiraSansExtraCondensed-Regular.ttf");
+}
 #sign-up {
     display: none;
 }
@@ -9,7 +13,7 @@ fieldset {
     background-color: #C6BEB5;
 }
 
-.div {
+.div-box {
     margin: 5px;
     padding: 5px;
 }
@@ -23,31 +27,6 @@ fieldset {
 label {
     float: left;
     margin-left: 28px;
-}
-
-.pick-info-box {
-    width: 45%;
-    display: inline-block;
-    text-align: center;
-    margin-left: 25px;
-}
-
-.pick-info-box:last-of-type {
-    margin-left: 0;
-}
-
-.box-info {
-    display: inline-block;
-    width: 90%;
-}
-
-.pick-info-box>label {
-    margin-left: 1px;
-}
-
-.pick-info-box>select {
-    width: 80%;
-    float: left;
 }
 
 #email {
@@ -67,23 +46,21 @@ label {
 #submit {
     font-size: 1.2em;
 }
-#fbl-btn {
-    background-color: #455ea1;
-    font-size: 1.2em;
-    text-decoration: none;
-    padding: 1px 6px;
-    align-items: flex-start;
-    text-align: center;
-    cursor: default;
-    box-sizing: border-box;
-    border-width: 2px;
-    border-style: outset;
-    border-color: buttonface;
-    border-image: initial;
-    color: white;
-}
 
 .text-content {
     text-decoration: none;
     color: red;
+}
+
+#errorUserReg{
+    font-size: 0.8em;
+    display: none;
+    float: left;
+    margin-left: 57px;
+}
+
+#errorPass{
+    font-size: 0.8em;
+    float: left;
+    margin-left: 35px;
 }

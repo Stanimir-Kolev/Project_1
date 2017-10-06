@@ -132,47 +132,17 @@ header>div>ul>li:last-child {
 
 main {
     background-color: #C6BEB5;
-}
-
-#novini {
-    background-color: #6B0000;
-    width: 98%;
-    margin: auto;
     margin-top: -10px;
 }
 
-#novini>.container {
-    width: 80%;
+#container {
+    width: 95%;
     margin: auto;
     padding: 20px 0 0 0;
-    background-color: #6B0000;
+    /*background-color: #6B0000;*/
 }
 
-#svqt {
-    display: none;
-}
-
-#sport {
-    display: none;
-}
-
-#politika {
-    display: none;
-}
-
-#zdrave {
-    display: none;
-}
-
-#tehnologii {
-    display: none;
-}
-
-#galeriq {
-    display: none;
-}
-
-#novini>.container>.carousel {
+#container>.carousel {
     width: 100%;
 }
 
@@ -202,62 +172,59 @@ main {
     width: 100%;
 }
 
-#content {
+#novini {
     display: inline-block;
     width: 100%;
-    padding: 10px;
-    background-color: #6B0000;
-    margin-top: 40px;
-    /*text-align: center;*/
+    /*background-color: #6B0000;*/
+    margin-top: 45px;
 }
 
-.section-content {
+#section-content {
     display: inline-block;
-    width: 67%;
+    width: 73%;
 }
 
-.section-content>section {
+#novini>section {
     display: inline-block;
     width: 100%;
-}
-
-.section-content>section:first-of-type {
     float: left;
 }
 
-.section-content>section:last-of-type {
-    display: inline-block;
+#content {
+    background-color: #6B0000;
+    width: 98%;
+    margin: auto;
 }
 
 #content>aside {
-    width: 32%;
+    width: 27%;
     float: right;
+    margin-top: 45px;
+    padding-right: 10px;
 }
-
-
-/* #content>section:nth-child(2) {
-    margin: 0 20px;
-} */
 
 #nav-aside-sort {
     text-align: center;
     margin: 0;
 }
 
+#nav-aside-sort>li {
+    padding-left: 3.8%;
+    padding-right: 3.8%;
+}
+
 .aside-sort-content {
     background-color: #C6BEB5;
     display: inline-block;
-    font-size: 1.3em;
+    font-size: 1em;
     cursor: pointer;
-    width: 32.55%;
     line-height: 40px;
 }
 
 .aside-sort-content-on {
     display: inline-block;
-    font-size: 1.3em;
+    font-size: 1em;
     cursor: pointer;
-    width: 32.55%;
     line-height: 40px;
     padding-bottom: 5px;
     background-color: #94908B;
@@ -265,18 +232,15 @@ main {
 }
 
 #aside-sort>div>p>span {
-    font-size: 20px;
-    padding: 15px;
+    font-size: 1em;
+    padding: 10px 2px;
     margin: 0 15px 10px 1px;
-    /*border-radius: 50%;*/
+    border: 1px solid #fff;
     float: left;
-    /*width: 10px;
-    height: 10px;*/
-    line-height: 10px;
-    /*background-color: blue;*/
-    color: #6B0000;
-    font-weight: bolder;
+    background-color: #6B0000;
+    color: #fff;
     box-sizing: content-box;
+    border-radius: 50%;
 }
 
 #aside-sort>div>p {
@@ -284,18 +248,13 @@ main {
     height: 62px;
     overflow: hidden;
     margin-bottom: 10px;
+    font-weight: bolder;
 }
 
 #aside-content {
     background-color: #94908B;
     padding: 10px;
 }
-
-#aside-content>p>span {
-    border: 1px solid #6B0000;
-    border-radius: 50%;
-}
-
 
 /*carousel ->>>>*/
 
@@ -316,24 +275,38 @@ main {
 
 .carousel-image>img {
     width: 100%;
+    height: 140px;
+    cursor: pointer;
 }
 
 .carousel-image>p {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    text-align: right;
+    text-align: left;
     height: 40px;
     margin: 0;
 }
-#content>.section-content>.big-news-box {
+
+.big-news-box {
     background-color: #C6BEB5;
     text-align: left;
-    width: 100%;
+    width: 97%;
     float: left;
+    margin-left: 10px;
 }
-#content>.section-content>.big-news-box>img{
-    width: 100%;
+
+.big-news-box>img {
+    width: 98%;
+    display: block;
+    margin: auto;
 }
+
+.found-news{
+    cursor: pointer;
+}
+
+
+
 
 /* footer */
 
@@ -344,56 +317,88 @@ footer {
 .social-icons {
     display: inline-block;
     width: 70%;
-    margin: 50px 0 50px 150px;
+    margin: 3% 0 3% 20%;
 }
 
 .icon-sprite {
-    width: 97px;
-    height: 97px;
+    width: 45px;
+    height: 45px;
     display: inline-block;
     border-radius: 50%;
-    margin-left: 10%;
+    margin-left: 8%;
     border: 1px solid black;
 }
 
 #twitter-sprite {
     background-image: url("iconos-sociales.png");
-    background-position: 200px 99px;
+    background-size: 330px;
+    background-position: -50px 46px;
 }
 
 #twitter-sprite:hover {
     background-image: url("iconos-sociales.png");
-    background-position: 200px 0px;
+    background-size: 330px;
+    background-position: -50px 0px;
 }
 
 #facebook-sprite {
     background-image: url("iconos-sociales.png");
-    background-position: -5px 99px;
+    background-size: 330px;
+    background-position: 327px 46px;
 }
 
 #facebook-sprite:hover {
     background-image: url("iconos-sociales.png");
-    background-position: -5px 0px;
+    background-size: 330px;
+    background-position: 327px 0px;
 }
 
 #google-sprite {
     background-image: url("iconos-sociales.png");
-    background-position: 100px 99px;
+    background-size: 330px;
+    background-position: 45px 46px;
 }
 
 #google-sprite:hover {
     background-image: url("iconos-sociales.png");
-    background-position: 100px 0px;
+    background-size: 330px;
+    background-position: 45px 0px;
 }
 
 #instagram-sprite {
     background-image: url("iconos-sociales.png");
-    background-position: 400px 99px;
+    background-size: 330px;
+    background-position: 187px 45px;
 }
 
 #instagram-sprite:hover {
     background-image: url("iconos-sociales.png");
-    background-position: 400px 0px;
+    background-size: 330px;
+    background-position: 187px -2px;
+}
+
+#youtube-sprite {
+    background-image: url("iconos-sociales.png");
+    background-size: 330px;
+    background-position: -96px 45px;
+}
+
+#youtube-sprite:hover {
+    background-image: url("iconos-sociales.png");
+    background-size: 330px;
+    background-position: -96px -2px;
+}
+
+#linkedin-sprite {
+    background-image: url("iconos-sociales.png");
+    background-size: 330px;
+    background-position: 140px 44px;
+}
+
+#linkedin-sprite:hover {
+    background-image: url("iconos-sociales.png");
+    background-size: 330px;
+    background-position: 140px -2px;
 }
 
 .icon-sprite>span {
@@ -402,7 +407,8 @@ footer {
     text-align: center;
     text-transform: uppercase;
     position: relative;
-    top: 110px;
+    top: 50px;
+    left: -12px;
     text-decoration: none;
 }
 
@@ -455,14 +461,16 @@ footer {
 
 #search-content {
     background-color: #C6BEB5;
-    text-align: left;
     display: none;
-    width: 67%;
+    width: 80%;
+    margin-top: 44px;
+    margin: auto;
 }
 
 #search-content>h2 {
-    padding: 0 0 0 20px;
+    padding: 20px 0 0 20px;
     text-align: center;
+    margin-top: 0;
 }
 
 #search-content>form {
