@@ -1,6 +1,45 @@
 document.addEventListener('DOMContentLoaded', function () {
+<<<<<<< HEAD
     getNews('google-news').then(function (data) {
         var sudurjanie = document.querySelector('#novini');
+=======
+    //     var tagoveLi = document.querySelectorAll('.aside-sort-content');
+    // var first = tagoveLi[0].setAttribute('clicked', 'on');
+    // var second = tagoveLi[1].setAttribute('clicked', 'off');
+    // var third = tagoveLi[2].setAttribute('clicked', 'off');
+    // tagoveLi.forEach(function(x) {
+    //     x.addEventListener('click', function() {
+    //         if (x.getAttribute('clicked') == 'off') {
+    //             var toziEOn = tagoveLi.find(y => y.getAttribute('clicked') == 'on');
+    //             toziEOn.setAttribute('clicked', 'off');
+    //             x.className = "aside-sort-content-on";
+    //             x.setAttribute('clicked', 'on');
+    //         }
+    //     }, false);
+    // });
+    // Butoni sort
+    // var elementLi = document.querySelectorAll('.aside-sort-content');
+    // elementLi.forEach(function (x) {
+    //     x.setAttribute('clicked', 'false')
+    //     x.addEventListener('click', function () {
+    //         var asideContent = document.getElementById('aside-content');
+    //         if (x.getAttribute('clicked') == 'false') {
+    //             x.style.paddingBottom = 10 + 'px';
+    //             asideContent.style.marginTop = -10 + 'px';
+    //             x.setAttribute('clicked', 'true');
+    //         } else {
+    //             x.style.paddingBottom = 0 + 'px';
+    //             asideContent.style.marginTop = -10 + 'px';
+    //             x.setAttribute('clicked', 'false');
+    //         }
+    //     }, false);
+    // });
+    //Novini
+
+    var novini = document.getElementById('novini-content');
+    getNews('focus').then(function (data) {
+        var sudurjanie = document.querySelector('#novini > #content > .section-content');
+>>>>>>> 5edfdebc6f2d727bafdc65af85dc5d544e51fa37
         var section = document.createElement('section');
         sudurjanie.appendChild(section);
         for (var index = 0; index < 6; index++) {
@@ -62,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('allNews', JSON.stringify(allNews));
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
+
             for (var index = 0; index < 6; index++) {
                 var article = document.createElement('article');
                 article.setAttribute('class', 'news-box');
