@@ -31,9 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
     //     }, false);
     // });
     //Novini
-
+    var  all=[];
     var novini = document.getElementById('novini-content');
     getNews('focus').then(function (data) {
+        all.push(JSON.parse(localStorage.getItem('allNews')));
+        all.push(data);
+        localStorage.setItem('allNews',JSON.stringify(all));
         var sudurjanie = document.querySelector('#novini > #content > .section-content');
         var section = document.createElement('section');
         sudurjanie.appendChild(section);
@@ -97,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         noviniDiv.style.margin = 'auto';
         noviniDiv.style.marginTop = -10 + 'px';
         getNews('focus').then(function (data) {
+
             var sudurjanie = document.querySelector('#novini > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -166,6 +170,9 @@ document.addEventListener('DOMContentLoaded', function () {
         svqtdiv.style.margin = 'auto';
         svqtdiv.style.marginTop = -10 + 'px';
         getNews('CNN').then(function (data) {
+             all.push(JSON.parse(localStorage.getItem('allNews')));
+        all.push(data);
+        localStorage.setItem('allNews',JSON.stringify(all));
             var sudurjanie = document.querySelector('#svqt > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -231,6 +238,9 @@ document.addEventListener('DOMContentLoaded', function () {
         sportdiv.style.margin = 'auto';
         sportdiv.style.marginTop = -10 + 'px';
         getNews('bbc-sport').then(function (data) {
+             all.push(JSON.parse(localStorage.getItem('allNews')));
+        all.push(data);
+        localStorage.setItem('allNews',JSON.stringify(all));
             var sudurjanie = document.querySelector('#sport > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -296,6 +306,9 @@ document.addEventListener('DOMContentLoaded', function () {
         politikaDiv.style.margin = 'auto';
         politikaDiv.style.marginTop = -10 + 'px';
         getNews('business-insider').then(function (data) {
+             all.push(JSON.parse(localStorage.getItem('allNews')));
+        all.push(data);
+        localStorage.setItem('allNews',JSON.stringify(all));
             var sudurjanie = document.querySelector('#politika > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -361,6 +374,9 @@ document.addEventListener('DOMContentLoaded', function () {
         galeriqDiv.style.margin = 'auto';
         galeriqDiv.style.marginTop = -10 + 'px';
         getNews('fortune').then(function (data) {
+             all.push(JSON.parse(localStorage.getItem('allNews')));
+        all.push(data);
+        localStorage.setItem('allNews',JSON.stringify(all));
             var sudurjanie = document.querySelector('#galeriq > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -426,6 +442,9 @@ document.addEventListener('DOMContentLoaded', function () {
         tehnologiiDiv.style.margin = 'auto';
         tehnologiiDiv.style.marginTop = -10 + 'px';
         getNews('buzzfeed').then(function (data) {
+             all.push(JSON.parse(localStorage.getItem('allNews')));
+        all.push(data);
+        localStorage.setItem('allNews',JSON.stringify(all));
             var sudurjanie = document.querySelector('#tehnologii > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
@@ -491,6 +510,7 @@ document.addEventListener('DOMContentLoaded', function () {
         zdraveDiv.style.margin = 'auto';
         zdraveDiv.style.marginTop = -10 + 'px';
         getNews('independent').then(function (data) {
+            localStorage.setItem('allNews',JSON.stringify(data));
             var sudurjanie = document.querySelector('#zdrave > #content > .section-content');
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
