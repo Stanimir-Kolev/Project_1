@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var carouselArray = [];
     var p = document.querySelectorAll('.caroPara')
     for (var i = 0; i < MAX_IMAGES; i++) {
-        a = Math.floor(Math.random() * novini.length);
-        carouselArray.push(novini[a]);
+        var random = Math.floor(Math.random() * novini.length);
+        if (carouselArray.indexOf(random) == -1) {
+            carouselArray.push(novini[random]);
+        }
 
     }
     for (var i = 0; i < carouselArray.length; i++) {

@@ -71,12 +71,18 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector('#info-for-search').innerHTML = '';
       document.querySelector('#search-result-mini').innerHTML = '';
       var novini1 = [];
-
-
+      var durjachArray = [];
       var counter = 0;
       var searchInput = document.getElementById('search-input-text').value;
       var divResult = document.getElementById("info-for-search");
 
+      // function color() {
+      //   return document.querySelectorAll('.found-news').forEach(x => x.addEventListener('mouseover', function () {
+      //     x.style.backgoundColor = 'yellow';
+      //   })) && document.querySelectorAll('.found-news').forEach(x => x.addEventListener('mouseout', function () {
+      //     x.style.backgoundColor = 'white';
+      //   }))
+      // }
       var pSearch = document.createElement("p");
 
       divResult.appendChild(pSearch);
@@ -87,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         novini1 = novini.filter(x => x.source === valueOfCategorySelect || x.news[valueOfTypeSelect])
         novini1.forEach(function (x) {
           if ((x.news.title.indexOf(searchInput) !== -1) || (x.news.description.indexOf(searchInput) !== -1)) {
+            durjachArray.push(x);
             var divFoundNews = document.getElementById('search-result-mini');
             var articleFoundNews = document.createElement("article");
             articleFoundNews.setAttribute("class", "found-news");
@@ -110,57 +117,57 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
         })
-        // document.querySelectorAll('.found-news').forEach(function (x, index) {
-        //   x.addEventListener('click', function () {
-        //     var sudurjanie = document.querySelector('#novini');
-        //     sudurjanie.innerHTML = "";
+        document.querySelectorAll('.found-news').forEach(function (x, index) {
+          x.addEventListener('click', function () {
+            var sudurjanie = document.querySelector('#novini');
+            sudurjanie.innerHTML = "";
 
-        //     document.getElementById("search-content").style.display = "none";
-        //     var article = novini1[index].news;
+            document.getElementById("search-content").style.display = "none";
+            var article = durjachArray[index].news;
 
-        //     var title1 = article.title;
-        //     var author1 = article.author;
-        //     var pub = article.publishedAt;
-        //     var p = article.description;
-        //     var sudurjanie = document.querySelector('#novini');
+            var title1 = article.title;
+            var author1 = article.author;
+            var pub = article.publishedAt;
+            var p = article.description;
+            var sudurjanie = document.querySelector('#novini');
 
-        //     var bigArticle = document.createElement('div');
-        //     bigArticle.setAttribute('class', 'big-news-box');
-        //     document.querySelector('#novini').appendChild(bigArticle);
+            var bigArticle = document.createElement('div');
+            bigArticle.setAttribute('class', 'big-news-box');
+            document.querySelector('#novini').appendChild(bigArticle);
 
-        //     var title = document.createElement("h2");
-        //     title.textContent = title1;
-        //     title.style.fontWeight = 'bold';
-        //     bigArticle.appendChild(title);
+            var title = document.createElement("h2");
+            title.textContent = title1;
+            title.style.fontWeight = 'bold';
+            bigArticle.appendChild(title);
 
-        //     var img1 = document.createElement('img');
-        //     img1.src = article.urlToImage;
-        //     bigArticle.appendChild(img1);
+            var img1 = document.createElement('img');
+            img1.src = article.urlToImage;
+            bigArticle.appendChild(img1);
 
-        //     var description = document.createElement("p");
-        //     description.textContent = p;
-        //     bigArticle.appendChild(description);
+            var description = document.createElement("p");
+            description.textContent = p;
+            bigArticle.appendChild(description);
 
-        //     var author = document.createElement('p');
-        //     if (author1 !== null) {
-        //       author.textContent = 'Author: ' + author1;
-        //     } else {
-        //       author.textContent = 'Author: No author.';
-        //     }
-        //     bigArticle.appendChild(author);
-        //     var published = document.createElement('p');
-        //     published.textContent = 'Date: ' + pub;
-        //     bigArticle.appendChild(published);
-        //     sudurjanie.style.display = "block";
-        //   }, false);
-        // }, false);
+            var author = document.createElement('p');
+            if (author1 !== null) {
+              author.textContent = 'Author: ' + author1;
+            } else {
+              author.textContent = 'Author: No author.';
+            }
+            bigArticle.appendChild(author);
+            var published = document.createElement('p');
+            published.textContent = 'Date: ' + pub;
+            bigArticle.appendChild(published);
+            sudurjanie.style.display = "block";
+          }, false);
+        }, false);
 
       };
       if (valueOfCategorySelect && valueOfTypeSelect) {
         novini1 = novini.filter(x => x.source == valueOfCategorySelect && x.news[valueOfTypeSelect]);
         novini1.forEach(function (x) {
           if ((x.news.title.indexOf(searchInput) !== -1) || (x.news.description.indexOf(searchInput) !== -1)) {
-
+            durjachArray.push(x);
             var divFoundNews = document.getElementById('search-result-mini');
 
             var articleFoundNews = document.createElement("article");
@@ -184,54 +191,54 @@ document.addEventListener("DOMContentLoaded", function () {
             counter++;
           }
         })
-        // document.querySelectorAll('.found-news').forEach(function (x, index) {
-        //   x.addEventListener('click', function () {
-        //     var sudurjanie = document.querySelector('#novini');
-        //     sudurjanie.innerHTML = "";
+        document.querySelectorAll('.found-news').forEach(function (x, index) {
+          x.addEventListener('click', function () {
+            var sudurjanie = document.querySelector('#novini');
+            sudurjanie.innerHTML = "";
 
-        //     document.getElementById("search-content").style.display = "none";
-        //     var article = novini1[index].news;
-        //     var title1 = article.title;
-        //     var author1 = article.author;
-        //     var pub = article.publishedAt;
-        //     var p = article.description;
-        //     var sudurjanie = document.querySelector('#novini');
+            document.getElementById("search-content").style.display = "none";
+            var article = durjachArray[index].news;
+            var title1 = article.title;
+            var author1 = article.author;
+            var pub = article.publishedAt;
+            var p = article.description;
+            var sudurjanie = document.querySelector('#novini');
 
-        //     var bigArticle = document.createElement('div');
-        //     bigArticle.setAttribute('class', 'big-news-box');
-        //     document.querySelector('#novini').appendChild(bigArticle);
+            var bigArticle = document.createElement('div');
+            bigArticle.setAttribute('class', 'big-news-box');
+            document.querySelector('#novini').appendChild(bigArticle);
 
-        //     var title = document.createElement("h2");
-        //     title.textContent = title1;
-        //     title.style.fontWeight = 'bold';
-        //     bigArticle.appendChild(title);
+            var title = document.createElement("h2");
+            title.textContent = title1;
+            title.style.fontWeight = 'bold';
+            bigArticle.appendChild(title);
 
-        //     var img1 = document.createElement('img');
-        //     img1.src = article.urlToImage;
-        //     bigArticle.appendChild(img1);
+            var img1 = document.createElement('img');
+            img1.src = article.urlToImage;
+            bigArticle.appendChild(img1);
 
-        //     var description = document.createElement("p");
-        //     description.textContent = p;
-        //     bigArticle.appendChild(description);
+            var description = document.createElement("p");
+            description.textContent = p;
+            bigArticle.appendChild(description);
 
-        //     var author = document.createElement('p');
-        //     if (author1 !== null) {
-        //       author.textContent = 'Author: ' + author1;
-        //     } else {
-        //       author.textContent = 'Author: No author.';
-        //     }
-        //     bigArticle.appendChild(author);
-        //     var published = document.createElement('p');
-        //     published.textContent = 'Date: ' + pub;
-        //     bigArticle.appendChild(published);
-        //     sudurjanie.style.display = "block";
-        //   }, false);
-        // }, false);
+            var author = document.createElement('p');
+            if (author1 !== null) {
+              author.textContent = 'Author: ' + author1;
+            } else {
+              author.textContent = 'Author: No author.';
+            }
+            bigArticle.appendChild(author);
+            var published = document.createElement('p');
+            published.textContent = 'Date: ' + pub;
+            bigArticle.appendChild(published);
+            sudurjanie.style.display = "block";
+          }, false);
+        }, false);
       }
       if (!(valueOfCategorySelect) && !(valueOfTypeSelect)) {
         novini.forEach(function (x) {
           if ((x.news.title.indexOf(searchInput) !== -1) || (x.news.description.indexOf(searchInput) !== -1)) {
-
+            durjachArray.push(x);
             var divFoundNews = document.getElementById('search-result-mini');
 
             var articleFoundNews = document.createElement("article");
@@ -259,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function () {
           sudurjanie.innerHTML = "";
 
           document.getElementById("search-content").style.display = "none";
-          var article = novini[index].news;
+          var article = durjachArray[index].news;
           var title1 = article.title;
           var author1 = article.author;
           var pub = article.publishedAt;
@@ -308,5 +315,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   });
-
 });
+
+
