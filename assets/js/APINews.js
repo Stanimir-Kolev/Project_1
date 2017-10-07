@@ -1,7 +1,7 @@
 allNews = [];
 
 function getNews(api) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     var url =
       "https://newsapi.org/v1/articles?source=" +
       api +
@@ -13,7 +13,7 @@ function getNews(api) {
     xhr.send(null);
     xhr.addEventListener(
       "load",
-      function() {
+      function () {
         if (xhr.status == 200) {
           var response = xhr.responseText;
           var newsData = JSON.parse(response);
@@ -26,7 +26,7 @@ function getNews(api) {
             published: []
           };
           result.source = newsData.source;
-          for (var index = 0; index < 6; index++) {
+          for (var index = 0; index < 8; index++) {
             result.description.push(newsData.articles[index].description);
             result.urlImage.push(newsData.articles[index].urlToImage);
             result.author.push(newsData.articles[index].author);
@@ -36,6 +36,7 @@ function getNews(api) {
               news: newsData.articles[index],
               source: result.source
             });
+
           }
           resolve(result);
         } else {
@@ -46,8 +47,3 @@ function getNews(api) {
     );
   });
 }
-// console.log(allNews);
-// novinar = (JSON.parse(localStorage.getItem('allNews'))).slice(0, JSON.parse(localStorage.getItem('allNews').length));
-// var novNovinar = novinar;
-// console.log(novinar);
-// console.log(novNovinar);

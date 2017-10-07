@@ -14,20 +14,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="./assets/js/javascript.js"></script>
+    <script src="./assets/js/APINews.js"></script>
     <script src="./assets/js/NewsFilter.js"></script>
     <script src="./assets/js/LoginService.js"></script>
-    <script src="./assets/js/APINews.js"></script>
     <script src="./assets/js/AsideBar.js"></script>
     <script src="./assets/js/LoginRegistrationController.js"></script>
     <script src="./assets/js/CarouselImages.js"></script>
-
+    <script src="./assets/js/clock.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <header>
             <div>
-                <img src="./assets/images/Az-Sabujdam-Balgaria-Logo.png" alt="Logo">
+                <h1>The Clock</h1>
+                <canvas width="200" height="200" id="first"></canvas>
                 <ul>
                     <li id="searching-feeld">
                         <img src="./assets/images/lupa_search.png" alt="Search" id="search-img">
@@ -46,7 +47,7 @@
             <nav>
                 <ul id="navigation-bar">
                     <li><a href="" id="google-news">Начало</a></li>
-                    <li><a href="" id="CNN">Свят</a></li>
+                    <li><a href="" id="bbc-news">Свят</a></li>
                     <li><a href="" id="talksport">Спорт</a></li>
                     <li><a href="" id="business-insider">Политика</a></li>
                     <li><a href="" id="fortune">Галерия</a></li>
@@ -220,22 +221,21 @@
                             <div>
                                 <label for="">Изберете категория: </label>
                                 <select name="" id="select-category">
-                                <option value="#">-------------------</option>
-                                <option value="All">Всички</option>
-                                <option value="focus">Фокус</option>
-                                <option value="CNN">Свят</option>
-                                <option value="bbc-sport">Спорт</option>
-                                <option value="business-insider">Политика</option>
-                                <option value="buzzfeed">Галерия</option>
-                                <option value="fortune">Технологии</option>
-                                <option value="independent">Здраве</option>
+                                <option value='All' ></option>
+                                <option value="google-news">Google news</option>
+                                <option value="bbc-news">bbc-news</option>
+                                <option value="talksport">talksport</option>
+                                <option value="business-insider">business-insider</option>
+                                <option value="fortune">fortune</option>
+                                <option value="buzzfeed">buzzfeed</option>
+                                <option value="independent">independent</option>
                             </select>
                             </div>
                             <br>
                             <div>
                                 <label for="">Търсене в: </label>
                                 <select name="" id="select-type">
-                                    <option value="All">------------------</option>
+                                <option value="All"></option>
                                 <option value="description">Текст</option>
                                 <option value="title">Заглавие</option>
                                 <option value="author">Автор</option>

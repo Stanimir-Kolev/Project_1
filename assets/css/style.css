@@ -21,9 +21,16 @@ header {
     background-color: #C6BEB5;
 }
 
-header>div>img {
-    margin-left: 40px;
-    width: 200px;
+header>div>canvas {
+    margin-left: 12px;
+    height:160px;
+    width: 160px;
+}
+header>div>h1 {
+position: absolute;
+    top: 60px;
+    left: 588px;
+    color: #6B0000;
 }
 
 header>nav {
