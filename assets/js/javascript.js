@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var sudurjanie = document.querySelector('#novini');
         sudurjanie.innerHTML = '';
         getNews(id).then(function (data) {
-            // localStorage.setItem('allNews', JSON.stringify(allNews));
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
             for (var index = 0; index < 6; index++) {

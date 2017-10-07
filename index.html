@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Аз събуждам България</title>
+    <title>THE CLOCK</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,10 +34,10 @@
                         <img src="./assets/images/lupa_search.png" alt="Search" id="search-img">
                     </li>
                     <li>
-                        <span id="vhod">Вход</span>
+                        <span id="vhod">Sing in</span>
                     </li>
                     <li>
-                        <span id="reg">Регистрация</span>
+                        <span id="reg">Sign up</span>
                     </li>
                     <li>
                         <span id="userIn"></span>
@@ -46,77 +46,73 @@
             </div>
             <nav>
                 <ul id="navigation-bar">
-                    <li><a href="" id="google-news">Начало</a></li>
-                    <li><a href="" id="bbc-news">Свят</a></li>
-                    <li><a href="" id="talksport">Спорт</a></li>
-                    <li><a href="" id="business-insider">Политика</a></li>
-                    <li><a href="" id="fortune">Галерия</a></li>
-                    <li><a href="" id="buzzfeed">Технологии</a></li>
-                    <li><a href="" id="independent">Здраве</a></li>
+                    <li><a href="" id="google-news">Home</a></li>
+                    <li><a href="" id="bbc-news">World</a></li>
+                    <li><a href="" id="talksport">Sport</a></li>
+                    <li><a href="" id="business-insider">Business</a></li>
+                    <li><a href="" id="fortune">Science</a></li>
+                    <li><a href="" id="buzzfeed">BuzzFeed</a></li>
+                    <li><a href="" id="independent">Independent</a></li>
                 </ul>
             </nav>
         </header>
         <main>
-            <!--SIGN IN-->
             <div id="sign-in">
                 <form action="" id="formVhod">
                     <fieldset>
-                        <h2>ВХОД</h2>
+                        <h2>SIGN UP</h2>
                         <div><img id="close" title="close" src="http://blink.watch/images/close.png" alt=""></div>
                         <div class="div-box">
-                            <label for="" id="enterName">Потребителско име:</label>
+                            <label for="" id="enterName">Username</label>
                             <br/>
                             <input name="username" type="text" id="username">
                         </div>
                         <div class="div-box">
-                            <label for="" id="enterPass">Парола</label>
+                            <label for="" id="enterPass">Password</label>
                             <br/>
                             <input name="pass" type="password" id="password">
                         </div>
-                        <p id="error">Невалидно потребителско име или парола!</p>
-                        <a href="#" class="text-content">Забравена парола</a>
+                        <p id="error">You have entered an invalid username or password</p>
                         <br/>
                         <br/>
-                        <input name="pass" type="checkbox" id="repeatpassword" required> <span>Запомни ме на този компютър</span>
+                        <input name="pass" type="checkbox" id="repeatpassword" required> <span>Remember me on this device</span>
                         <br/>
                         <br/>
                         <div class="div-box">
-                            <input type="submit" value="ВХОД" id="subLogin">
+                            <input type="submit" value="Sign in" id="subLogin">
                         </div>
                         <br/>
                         <br/>
-                        <a href="#" id="new-reg" class="text-content">Направи нова регистрация</a>
+                        <a href="#" id="new-reg" class="text-content">New Registration</a>
                         <br/>
-                        <!--</div>-->
                     </fieldset>
                 </form>
             </div>
-            <!--FORMA ZA REGISTRATCIQ-->
             <div id="sign-up">
                 <form action="">
                     <fieldset>
-                        <h2>РЕГИСТРАЦИЯ</h2>
+                        <h2>REGISTRATION</h2>
                         <div><img id="close1" title="close" src="http://blink.watch/images/close.png" alt=""></div>
-                        <p>Създаване на профил</p>
+                        <p>Create new account</p>
 
                         <div class="div-box">
-                            <label for="" id="enterName">Потребителско име:</label>
+                            <label for="" id="enterName">Username</label>
                             <br/>
-                            <span id="errorUserReg">Вече има потребител с това име!</span>
+                            <span id="errorUserReg">There is already a user with this username!</span>
                             <br/>
-                            <input name="username" type="text" id="username1" placeholder="Потребителско име">
+                            <input name="username" type="text" id="username1" placeholder="Username">
                         </div>
                         <div class="div-box">
-                            <label for="" id="enterPass">Парола</label>
+                            <label for="" id="enterPass">Password:</label>
                             <br/>
-                            <span id="errorPass">(Трябва да съдържа главна,малка буква и цифра)</span>
+                            <span id="errorPass">Your password must contain one upper letter one lower letter and one numeric character!</span>
                             <br/>
-                            <input name="pass" type="password" id="password1" placeholder="Парола">
+                            <input name="pass" type="password" id="password1" placeholder="Password">
                         </div>
                         <div class="div-box">
-                            <label for="" id="enterPass">Потвърди парола</label>
+                            <label for="" id="enterPass">Repeat Password:</label>
                             <br/>
-                            <input name="pass" type="password" id="repPass" placeholder="Парола">
+                            <input name="pass" type="password" id="repPass" placeholder="Repeat Password">
                         </div>
                         <div class="div-box">
                             <label for="" id="enterMail" placeholder="">E-mail:</label>
@@ -125,17 +121,15 @@
                             <p id='errorReg'></p>
                         </div>
                         <div class="div-box">
-                            <input type="submit" value="ПРОДЪЛЖИ" id="subReg">
+                            <input type="submit" value="Register" id="subReg">
                         </div>
                     </fieldset>
                 </form>
             </div>
-            <!--NOVINI DIV-->
             <div id="content">
                 <div id="container">
                     <h2>НА ФОКУС</h2>
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="carousel-image">
@@ -151,7 +145,6 @@
                                     <p class="caroPara"></p>
                                 </div>
                             </div>
-
                             <div class="item">
                                 <div class="carousel-image">
                                     <img class="caroImg" src="">
@@ -181,8 +174,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Left and right controls -->
                         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                             <span class="sr-only">Previous</span>
@@ -192,57 +183,47 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    <!--</div>-->
+
                 </div>
                 <div id="section-content">
                     <div id="novini">
                     </div>
-                    <!--    TOva e search box-a      !!!!!!!!!!!!!!!!!!!!!!!!!!!                            -->
+
                     <div id="search-content">
-                        <h2>ТЪРСЕНЕ</h2>
+                        <h2>SEARCH</h2>
                         <form action="">
-                            <div>
-                                <label for="">Търсене на: </label>
-                                <div>
-                                    <input type="radio" name="type-of-search" checked>
-                                    <span>Всички думи</span>
-                                </div>
-                                <div>
-                                    <input type="radio" name="type-of-search">
-                                    <span>Някоя дума</span>
-                                </div>
-                            </div>
                             <br>
                             <div>
-                                <label for="">Въведете текст: </label>
+                                <label class="searchLabel" for="">Enter text</label>
                                 <input type="text" id="search-input-text">
                             </div>
                             <br>
                             <div>
-                                <label for="">Изберете категория: </label>
+                                <label class="searchLabel" for="">Select category</label>
                                 <select name="" id="select-category">
                                 <option value='All' ></option>
-                                <option value="google-news">Google news</option>
-                                <option value="bbc-news">bbc-news</option>
+                                <option value="google-news">Home</option>
+                                <option value="bbc-news">World</option>
                                 <option value="talksport">talksport</option>
-                                <option value="business-insider">business-insider</option>
-                                <option value="fortune">fortune</option>
-                                <option value="buzzfeed">buzzfeed</option>
-                                <option value="independent">independent</option>
+                                <option value="business-insider">Business</option>
+                                <option value="fortune">Science</option>
+                                <option value="buzzfeed">BuzzFeed</option>
+                                <option value="independent">Independent</option>
                             </select>
                             </div>
                             <br>
                             <div>
-                                <label for="">Търсене в: </label>
+                                <label class="searchLabel" for="">Select Type</label>
                                 <select name="" id="select-type">
                                 <option value="All"></option>
-                                <option value="description">Текст</option>
-                                <option value="title">Заглавие</option>
-                                <option value="author">Автор</option>
+                                <option value="description">Description</option>
+                                <option value="title">Title</option>
+                                <option value="author">Author</option>
                             </select>
                             </div>
                             <br>
-                            <button id="search-but">ТЪРСИ</button>
+                            <button id="search-but">Search</button>
+                            <br>
                         </form>
 
                         <div id="info-for-search">
@@ -302,12 +283,11 @@
             </div>
             <div class="footer-copyright ">
                 <ul>
-                    <li><a href="# ">Условия за ползване</a></li>
-                    <li><a href="# ">Контакти</a></li>
-                    <li><a href="# ">Реклама</a></li>
-                    <li><a href="# ">Кариери</a></li>
-                    <li><a href="# ">Поверителност</a></li>
-                    <li><a href="# ">Местоположение</a></li>
+                    <li><a href="# ">Terms of Use</a></li>
+                    <li><a href="# ">Feedback</a></li>
+                    <li><a href="# ">About our Ads</a></li>
+                    <li><a href="# ">Privacy</a></li>
+                    <li><a href="# ">Location</a></li>
                 </ul>
             </div>
         </footer>
