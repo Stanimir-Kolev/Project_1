@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (carouselArray.indexOf(random) == -1) {
             carouselArray.push(novini[random]);
         }
-
     }
     for (var i = 0; i < carouselArray.length; i++) {
         images[i].src = carouselArray[i].news.urlToImage;
         p[i].textContent = carouselArray[i].news.title;
     }
+
     images.forEach(function (x, index) {
         x.addEventListener('click', function () {
             document.querySelector('#novini').innerHTML = "";

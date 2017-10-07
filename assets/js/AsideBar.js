@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var novini = JSON.parse(localStorage.getItem("allNews"));
-    var noviniSortByDate = novini.sort((a,b) => Date.parse(b.news.publishedAt)- Date.parse(a.news.publishedAt));
 
-    // var b = Date.parse(novini[i].news.publishedAt);
-    console.log(novini);
+    var novini = JSON.parse(localStorage.getItem("allNews"));
+
+    var noviniSortByDate = novini.sort((a, b) => Date.parse(b.news.publishedAt) - Date.parse(a.news.publishedAt));
+    
     var tagoveLi = document.querySelectorAll('.aside-sort-content');
 
     tagoveLi.forEach(function (x, index) {
