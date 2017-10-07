@@ -7,9 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var paragraphHolder = document.querySelector("#aside-content");
     var articlesHTML = '';
     for (var i = 0; i < 6; i++) {
-        if (!novini[i]) {
-            break;
-        }
         if (!noviniSortBy[i]) {
             break;
         }
