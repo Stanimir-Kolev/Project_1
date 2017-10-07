@@ -133,10 +133,7 @@ header>div>ul>li {
 header>div>ul>li:last-child {
     border-right: none;
 }
-
-
 /* main */
-
 main {
     background-color: #C6BEB5;
     margin-top: -10px;
@@ -147,6 +144,11 @@ main {
     margin: auto;
     padding: 20px 0 0 0;
     /*background-color: #6B0000;*/
+}
+#container>h2{
+color: #fff;
+    font-weight: bold;
+    padding: 0 0 0 5%;
 }
 
 #container>.carousel {
@@ -216,8 +218,8 @@ main {
 }
 
 #nav-aside-sort>li {
-    padding-left: 3.8%;
-    padding-right: 3.8%;
+    padding-left: 5.4%;
+    padding-right: 5.5%;
 }
 
 .aside-sort-content {
@@ -235,7 +237,7 @@ main {
     line-height: 40px;
     padding-bottom: 5px;
     background-color: #94908B;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 #aside-sort>div>p>span {
@@ -262,6 +264,7 @@ main {
     background-color: #94908B;
     padding: 10px;
 }
+
 
 /*carousel ->>>>*/
 
@@ -308,11 +311,9 @@ main {
     margin: auto;
 }
 
-.found-news{
+.found-news {
     cursor: pointer;
 }
-
-
 
 
 /* footer */
@@ -471,7 +472,7 @@ footer {
     display: none;
     width: 80%;
     margin-top: 44px;
-    margin: auto;
+    margin: 6% auto;
 }
 
 #search-content>h2 {
