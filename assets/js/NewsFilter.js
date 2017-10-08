@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
       if (!(valueOfCategorySelect) && !(valueOfTypeSelect)) {
         novini.forEach(function (x) {
-          if ((x.news.title.indexOf(searchInput) !== -1) || (x.news.description.indexOf(searchInput) !== -1) || (x.news.author.indexOf(searchInput) !== -1)) {
+          if ((x.news.title.indexOf(searchInput) !== -1) || (x.news.description.indexOf(searchInput) !== -1)) {
             durjachArray.push(x);
             printData(x.news.title, x.news.description);
             counter++;
