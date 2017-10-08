@@ -44,6 +44,69 @@
                         <span id="userIn"></span>
                     </li>
                 </ul>
+                <div id="sign-in">
+                    <form action="" id="formVhod">
+                        <fieldset>
+                            <h2>SIGN UP</h2>
+                            <div><img id="close" title="close" src="http://blink.watch/images/close.png" alt=""></div>
+                            <div class="div-box">
+                                <label for="" id="enterName">Username:</label>
+                                <br/>
+                                <input name="username" type="text" id="username">
+                            </div>
+                            <div class="div-box">
+                                <label for="" id="enterPass">Password:</label>
+                                <br/>
+                                <input name="pass" type="password" id="password">
+                            </div>
+                            <p id="error">You have entered an invalid username or password</p>
+                            <input name="pass" type="checkbox" id="repeatpassword" required> <span>Remember me on this device</span>
+                            <br/>
+                            <div class="div-box">
+                                <input type="submit" value="Sign in" id="subLogin">
+                            </div>
+                            <a href="#" id="new-reg" class="text-content">New Registration</a>
+                        </fieldset>
+                    </form>
+                </div>
+                <div id="sign-up">
+                    <form action="">
+                        <fieldset>
+                            <h2>REGISTRATION</h2>
+                            <div><img id="close1" title="close" src="http://blink.watch/images/close.png" alt=""></div>
+                            <p>Create new account</p>
+
+                            <div class="div-box">
+                                <label for="" id="enterName">Username:</label>
+                                <br/>
+                                <span id="errorUserReg">There is already a user with this username!</span>
+                                <br/>
+                                <input name="username" type="text" id="username1" placeholder="Username">
+                            </div>
+                            <div class="div-box">
+                                <label for="" id="enterPass">Password:</label>
+                                <br/>
+                                <span id="errorPass">Your password must contain one upper letter one lower letter and one numeric character!</span>
+                                <br/>
+                                <input name="pass" type="password" id="password1" placeholder="Password">
+                            </div>
+                            <div class="div-box">
+                                <label for="" id="enterPass">Repeat Password:</label>
+                                <br/>
+                                <input name="pass" type="password" id="repPass" placeholder="Repeat Password">
+                            </div>
+                            <div class="div-box">
+                                <label for="" id="enterMail" placeholder="">E-mail:</label>
+                                <br/>
+                                <input name="email" type="text" id="email" placeholder="E-mail">
+                                <p id='errorReg'></p>
+                            </div>
+                            <div class="div-box">
+                                <input type="submit" value="Register" id="subReg">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
             <nav>
                 <ul id="navigation-bar">
@@ -58,72 +121,9 @@
             </nav>
         </header>
         <main>
-            <div id="sign-in">
-                <form action="" id="formVhod">
-                    <fieldset>
-                        <h2>SIGN UP</h2>
-                        <div><img id="close" title="close" src="http://blink.watch/images/close.png" alt=""></div>
-                        <div class="div-box">
-                            <label for="" id="enterName">Username</label>
-                            <br/>
-                            <input name="username" type="text" id="username">
-                        </div>
-                        <div class="div-box">
-                            <label for="" id="enterPass">Password</label>
-                            <br/>
-                            <input name="pass" type="password" id="password">
-                        </div>
-                        <p id="error">You have entered an invalid username or password</p>
-                        <input name="pass" type="checkbox" id="repeatpassword" required> <span>Remember me on this device</span>
-                        <br/>
-                        <div class="div-box">
-                            <input type="submit" value="Sign in" id="subLogin">
-                        </div>
-                        <a href="#" id="new-reg" class="text-content">New Registration</a>
-                    </fieldset>
-                </form>
-            </div>
-            <div id="sign-up">
-                <form action="">
-                    <fieldset>
-                        <h2>REGISTRATION</h2>
-                        <div><img id="close1" title="close" src="http://blink.watch/images/close.png" alt=""></div>
-                        <p>Create new account</p>
-
-                        <div class="div-box">
-                            <label for="" id="enterName">Username</label>
-                            <br/>
-                            <span id="errorUserReg">There is already a user with this username!</span>
-                            <br/>
-                            <input name="username" type="text" id="username1" placeholder="Username">
-                        </div>
-                        <div class="div-box">
-                            <label for="" id="enterPass">Password:</label>
-                            <br/>
-                            <span id="errorPass">Your password must contain one upper letter one lower letter and one numeric character!</span>
-                            <br/>
-                            <input name="pass" type="password" id="password1" placeholder="Password">
-                        </div>
-                        <div class="div-box">
-                            <label for="" id="enterPass">Repeat Password:</label>
-                            <br/>
-                            <input name="pass" type="password" id="repPass" placeholder="Repeat Password">
-                        </div>
-                        <div class="div-box">
-                            <label for="" id="enterMail" placeholder="">E-mail:</label>
-                            <br/>
-                            <input name="email" type="text" id="email" placeholder="E-mail">
-                            <p id='errorReg'></p>
-                        </div>
-                        <div class="div-box">
-                            <input type="submit" value="Register" id="subReg">
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
             <div id="content">
                 <div id="container">
-                    <h2>НА ФОКУС</h2>
+                    <h2>On Focus:</h2>
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="item active">

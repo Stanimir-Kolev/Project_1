@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         findButton.addEventListener('click', function(event) {
             event.preventDefault();
-            document.querySelector('#search-result-mini').style.display = "inline-block"; //////////
+            document.querySelector('#search-result-mini').style.display = "inline-block";
             document.querySelector('#info-for-search').innerHTML = '';
             document.querySelector('#search-result-mini').innerHTML = '';
             var novini1 = [];

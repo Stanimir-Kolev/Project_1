@@ -12,6 +12,10 @@ fieldset {
     border: 2px solid rgb(16, 6, 66);
 }
 
+fieldset>h2 {
+    font-size: 2em;
+}
+
 .div-box {
     margin: 5px;
     padding: 5px;
@@ -30,12 +34,10 @@ label {
 
 #sign-in {
     display: none;
-    margin: auto;
-    /*opacity: 0.9;*/
-}
-
-#sign-in>form {
-    /*width: 30%;*/
+    position: absolute;
+    z-index: 1000;
+    width: 30%;
+    margin: 160px 640px;
 }
 
 #close {

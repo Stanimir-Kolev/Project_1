@@ -43,13 +43,15 @@ header>div>canvas {
 }
 
 header>nav {
-    padding: 0 11px;
+    width: 98%;
+    margin: 0 auto;
 }
 
 header>nav>ul {
     background-color: rgb(16, 6, 66);
     text-align: center;
     line-height: 40px;
+    margin-bottom: 0;
 }
 
 header>nav>ul>li {
@@ -97,7 +99,7 @@ header>div>ul {
 /* searching in header */
 
 #search-img {
-    width: 23px;
+    width: 25px;
 }
 
 #search-box {
@@ -159,7 +161,6 @@ header>div>ul>li:last-child {
 
 main {
     background-color: #C6BEB5;
-    margin-top: -10px;
 }
 
 #container {
@@ -173,6 +174,10 @@ main {
     color: #fff;
     font-weight: bold;
     padding: 0 0 0 5%;
+    font-size: 2em;
+    background-color: rgb(225, 156, 0);
+    line-height: 35px;
+    margin: 0 0 15px;
 }
 
 #container>.carousel {
@@ -240,9 +245,16 @@ main {
     margin: 0;
 }
 
-#nav-aside-sort>li {
-    padding-left: 5.4%;
-    padding-right: 5.5%;
+#nav-aside-sort>:first-of-type {
+    width: 23%;
+}
+
+#nav-aside-sort>:nth-of-type(2) {
+    width: 40%;
+}
+
+#nav-aside-sort>:last-of-type {
+    width: 34%;
 }
 
 .aside-sort-content {
@@ -319,9 +331,13 @@ main {
 .carousel-image>p {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    text-align: left;
+    text-align: center;
     height: 40px;
     margin: 0;
+}
+
+.caroImg {
+    border-radius: 40%;
 }
 
 .big-news-box {
@@ -366,10 +382,16 @@ footer {
     background-color: #C6BEB5;
 }
 
+.footer-social {
+    width: 98%;
+    margin: auto;
+}
+
 .social-icons {
-    display: inline-block;
+    display: block;
     width: 70%;
-    margin: 3% 0 3% 20%;
+    margin: auto;
+    padding: 2% 0 4% 0;
 }
 
 .icon-sprite {
@@ -466,8 +488,17 @@ footer {
 
 .icon-sprite>span:hover {
     text-decoration: none;
-    color: white;
+    color: rgb(225, 156, 0);
     cursor: pointer;
+}
+
+.icon-sprite>span:focus {
+    text-decoration: none;
+}
+
+.footer-copyright {
+    width: 98%;
+    margin: auto;
 }
 
 .footer-copyright>ul {
@@ -498,7 +529,7 @@ footer {
 
 .footer-copyright>ul>li>a:hover {
     text-decoration: none;
-    color: rgba(248, 206, 17, 0.8);
+    color: rgb(225, 156, 0);
     cursor: pointer;
 }
 
@@ -569,10 +600,13 @@ footer {
 
 #info-for-search>p {
     padding: 10px 20px;
+    font-weight: bold;
+    margin: 0;
 }
 
 #info-for-search>span {
     padding-left: 20px;
+    font-weight: bold;
 }
 
 #search-result-mini {

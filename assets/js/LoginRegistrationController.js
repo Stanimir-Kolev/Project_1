@@ -1,16 +1,16 @@
-$(function () {
-    $('#vhod').on('click', function () {
+$(function() {
+    $('#vhod').on('click', function() {
         $('#formVhod').css('margin', 'auto');
         $('#sign-up').css('display', 'none');
-        $('#sign-in').css({ display: 'block', position: 'fixed', margin: 'auto', zIndex: 1000, width: 350, top: 140, left: 498 });
-        $('#new-reg').on('click', function () {
+        $('#sign-in').css('display', 'block');
+        $('#new-reg').on('click', function() {
             $('#sign-in').css('display', 'none');
-            $('#sign-up').css({ display: 'block', position: 'fixed', margin: 'auto', zIndex: 1000, width: 350, top: 140, left: 498 });
-            $('#close1').on('click', function () {
+            $('#sign-up').css('display', 'block');
+            $('#close1').on('click', function() {
                 $('#sign-up').css('display', 'none');
             });
         })
-        $('#subLogin').on('click', function (event) {
+        $('#subLogin').on('click', function(event) {
             event.preventDefault();
             var username = $('#username').val();
             var password = $('#password').val();
@@ -26,16 +26,16 @@ $(function () {
                 $('#password').val('');
             }
         })
-        $('#close').on('click', function () {
+        $('#close').on('click', function() {
             $('#sign-in').css('display', 'none');
         })
     })
 
-    $('#reg').on('click', function () {
+    $('#reg').on('click', function() {
         $('#formVhod').css('margin', 'auto');
         $('#sign-in').css('display', 'none');
-        $('#sign-up').css({ display: 'block', position: 'fixed', margin: 'auto', zIndex: 1000, width: 350, top: 140, left: 498 });
-        $('#subReg').on('click', function (event) {
+        $('#sign-up').css('display', 'block');
+        $('#subReg').on('click', function(event) {
             event.preventDefault();
             var username = $('#username1').val();
             var password = $('#password1').val();
@@ -44,8 +44,8 @@ $(function () {
             if (userList.addUser(username, password, repeatPassword, email)) {
                 $('#formVhod').css('margin', 'auto');
                 $('#sign-up').css('display', 'none');
-                $('#sign-in').css({ display: 'block', position: 'fixed', margin: 'auto', zIndex: 1000, width: 300, top: 140, left: 498 });
-                $('#close').on('click', function () {
+                $('#sign-in').css('display', 'block');
+                $('#close').on('click', function() {
                     $('#sign-in').css('display', 'none');
                 })
             } else {
@@ -55,7 +55,7 @@ $(function () {
                 $('#email').val('');
             }
         });
-        $('#close1').on('click', function () {
+        $('#close1').on('click', function() {
             $('#sign-up').css('display', 'none');
         });
     });
