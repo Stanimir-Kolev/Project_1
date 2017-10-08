@@ -1,12 +1,15 @@
 /* login*/
+
 @font-face {
     font-family: 'Fira Sans Extra Condensed';
     font-style: normal;
     src: url("../fonts/Fira_Sans_Extra_Condensed/FiraSansExtraCondensed-Regular.ttf");
 }
+
 fieldset {
     text-align: center;
     background-color: #C6BEB5;
+    border: 2px solid rgb(16, 6, 66);
 }
 
 .div-box {
@@ -25,28 +28,28 @@ label {
     width: 80%;
 }
 
-/*#sign-in {
-   
-}*/
-#sign-in{
-     display: none;
+#sign-in {
+    display: none;
     margin: auto;
     /*opacity: 0.9;*/
+}
 
+#sign-in>form {
+    /*width: 30%;*/
 }
-#sign-in>form{
-/*width: 30%;*/
-}
-#close{
+
+#close {
     margin-top: -59px;
     margin-right: 4px;
-    float:right;
-    width: 40px;
+    float: right;
+    width: 30px;
     cursor: pointer;
 }
+
 #submit {
     font-size: 1.2em;
 }
+
 #fbl-btn {
     background-color: #455ea1;
     font-size: 1.2em;
@@ -68,8 +71,14 @@ label {
     color: red;
 }
 
-#error{
+#error {
     display: none;
     font-size: 0.8em;
     color: red;
+}
+
+#subLogin {
+    display: block;
+    margin: 0 auto;
+    width: 25%;
 }

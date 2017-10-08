@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function () {
-    getNews('google-news').then(function (data) {
+document.addEventListener('DOMContentLoaded', function() {
+    getNews('google-news').then(function(data) {
         var sudurjanie = document.querySelector('#novini');
         var section = document.createElement('section');
         sudurjanie.appendChild(section);
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             article.appendChild(p);
 
 
-            article.addEventListener('click', function () {
+            article.addEventListener('click', function() {
                 document.querySelector('#novini > section').style.display = 'none';
                 var bigArticle = document.createElement('div');
                 bigArticle.setAttribute('class', 'big-news-box');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 published.textContent = 'Date: ' + date1 + " Hour: " + hour1;
                 bigArticle.appendChild(published);
                 bigArticle.style.cursor = "pointer";
-                bigArticle.addEventListener("click", function () {
+                bigArticle.addEventListener("click", function() {
                     document.querySelector('#novini').removeChild(bigArticle);
                     document.querySelector('#novini > section').style.display = 'block';
                 })
@@ -53,12 +53,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }).catch();
     var x = document.querySelectorAll("#navigation-bar > li > a");
-    x.forEach(y => y.addEventListener('click', function () {
+    x.forEach(y => y.addEventListener('click', function() {
         var id = $(this).attr('id');
         event.preventDefault();
         var sudurjanie = document.querySelector('#novini');
         sudurjanie.innerHTML = '';
-        getNews(id).then(function (data) {
+        getNews(id).then(function(data) {
             var section = document.createElement('section');
             sudurjanie.appendChild(section);
             for (var index = 0; index < 6; index++) {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 image.src = data.urlImage[index];
                 article.appendChild(p);
 
-                article.addEventListener('click', function () {
+                article.addEventListener('click', function() {
                     document.querySelector('#novini > section').style.display = 'none';
                     var bigArticle = document.createElement('div');
                     bigArticle.setAttribute('class', 'big-news-box');
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     bigArticle.appendChild(published);
                     bigArticle.style.cursor = "pointer";
 
-                    bigArticle.addEventListener("click", function () {
+                    bigArticle.addEventListener("click", function() {
                         document.querySelector('#novini').removeChild(bigArticle);
                         document.querySelector('#novini > section').style.display = 'block';
                     })
@@ -111,23 +111,23 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }).catch();
     }, false));
-    getNews('bbc-news').then(function (data) {
+    getNews('bbc-news').then(function(data) {
         localStorage.setItem('allNews', JSON.stringify(allNews));
     }).catch();
-    getNews('talksport').then(function (data) {
+    getNews('talksport').then(function(data) {
         localStorage.setItem('allNews', JSON.stringify(allNews));
     }).catch();
-    getNews('business-insider').then(function (data) {
+    getNews('business-insider').then(function(data) {
         localStorage.setItem('allNews', JSON.stringify(allNews));
     }).catch();
 
-    getNews('fortune').then(function (data) {
+    getNews('fortune').then(function(data) {
         localStorage.setItem('allNews', JSON.stringify(allNews));
     }).catch();
-    getNews('buzzfeed').then(function (data) {
+    getNews('buzzfeed').then(function(data) {
         localStorage.setItem('allNews', JSON.stringify(allNews));
     }).catch();
-    getNews('independent').then(function (data) {
+    getNews('independent').then(function(data) {
         localStorage.setItem('allNews', JSON.stringify(allNews));
     }).catch();
 });

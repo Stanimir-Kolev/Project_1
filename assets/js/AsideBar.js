@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 var date = "";
                 var hours = '00:00';
             }
-            if (index)
+            if (arguments.length == 1)
                 articlesHTML += `<p><span>&nbsp-&nbsp&nbsp${i+1}&nbsp-&nbsp</span>${article.title}</p>`;
             else
                 articlesHTML += `<p><span>${hours}</span>${article.title}</p>`;
@@ -95,23 +95,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 tagoveLi[index + 1].setAttribute("class", "aside-sort-content");
                 tagoveLi[index + 2].setAttribute("class", "aside-sort-content");
                 noviniSortBy = novini.sort((a, b) => Date.parse(b.news.publishedAt) - Date.parse(a.news.publishedAt));
-                // a();
+                a();
             }
             if (index == 1) {
                 tagoveLi[index + 1].setAttribute("class", "aside-sort-content");
                 tagoveLi[index - 1].setAttribute("class", "aside-sort-content");
                 noviniSortBy = novini.sort((a, b) => Date.parse(a.news.publishedAt) - Date.parse(b.news.publishedAt));
-                // a();
+                a();
             }
             if (index == 2) {
                 tagoveLi[index - 1].setAttribute("class", "aside-sort-content");
                 tagoveLi[index - 2].setAttribute("class", "aside-sort-content");
                 noviniSortBy = [];
                 novini.forEach(function(z) {
-                        if (!noviniSortBy.some(y => y.source == z.source))
-                            noviniSortBy.push(z);
-                    })
-                    // a(index);
+                    if (!noviniSortBy.some(y => y.source == z.source))
+                        noviniSortBy.push(z);
+                })
+                a(index);
             }
 
         }, false);
