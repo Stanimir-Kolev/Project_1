@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     for (var i = 0; i < MAX_IMAGES; i++) {
         var random = Math.floor(Math.random() * novini.length);
         if (carouselArray.indexOf(random) == -1) {
+            console.log(random);
             carouselArray.push(novini[random]);
         }
     }

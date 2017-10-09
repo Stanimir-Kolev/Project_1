@@ -1,9 +1,11 @@
 /* reg*/
+
 @font-face {
     font-family: 'Fira Sans Extra Condensed';
     font-style: normal;
     src: url("../fonts/Fira_Sans_Extra_Condensed/FiraSansExtraCondensed-Regular.ttf");
 }
+
 #sign-up {
     display: none;
 }
@@ -11,28 +13,37 @@
 fieldset {
     text-align: center;
     background-color: #C6BEB5;
+    border: 2px solid rgb(16, 6, 66);
 }
 
 .div-box {
     margin: 5px;
     padding: 5px;
 }
-#close1{
+
+#close1 {
     margin-top: -59px;
     margin-right: 4px;
-    float:right;
-    width: 40px;
+    float: right;
+    width: 30px;
     cursor: pointer;
 }
+
 label {
     float: left;
-    margin-left: 28px;
+    margin-left: 33px;
+    margin-bottom: 0px;
 }
-
+#picture{
+    width: 80%;
+}
 #email {
     width: 80%;
 }
-#password1,#repPass,#username1 {
+
+#password1,
+#repPass,
+#username1 {
     display: block;
     margin: auto;
     width: 80%;
@@ -43,6 +54,7 @@ label {
     width: 350px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 #submit {
     font-size: 1.2em;
 }
@@ -52,15 +64,17 @@ label {
     color: red;
 }
 
-#errorUserReg{
+#errorUserReg {
     font-size: 0.8em;
     display: none;
     float: left;
     margin-left: 57px;
 }
 
-#errorPass{
+#errorPass {
     font-size: 0.8em;
     float: left;
-   margin-left: 1px;
+    margin-left: 10%;
+    width: 80%;
+    text-align: justify;
 }

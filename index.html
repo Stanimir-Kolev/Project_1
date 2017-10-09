@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/css-login.css">
     <link rel="stylesheet" href="./assets/css/css-registration.css">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="./assets/js/javascript.js"></script>
@@ -27,8 +28,11 @@
     <div class="wrapper">
         <header>
             <div>
-                <h1>The Clock</h1>
                 <canvas width="200" height="200" id="first"></canvas>
+                <h1>The Clock</h1>
+                <div id="userPictureHolder">
+                    <img id="userPicture" src="" alt="" />
+                </div>
                 <ul>
                     <li id="searching-feeld">
                         <img src="./assets/images/lupa_search.png" alt="Search" id="search-img">
@@ -73,18 +77,12 @@
                             <input name="pass" type="password" id="password">
                         </div>
                         <p id="error">You have entered an invalid username or password</p>
-                        <br/>
-                        <br/>
                         <input name="pass" type="checkbox" id="repeatpassword" required> <span>Remember me on this device</span>
-                        <br/>
                         <br/>
                         <div class="div-box">
                             <input type="submit" value="Sign in" id="subLogin">
                         </div>
-                        <br/>
-                        <br/>
                         <a href="#" id="new-reg" class="text-content">New Registration</a>
-                        <br/>
                     </fieldset>
                 </form>
             </div>
@@ -121,6 +119,11 @@
                             <p id='errorReg'></p>
                         </div>
                         <div class="div-box">
+                            <label for="" id="enterPicture" placeholder="">Profile picture:</label>
+                            <br/>
+                            <input name="picture" type="text" id="picture" placeholder="Picture">
+                        </div>
+                        <div class="div-box">
                             <input type="submit" value="Register" id="subReg">
                         </div>
                     </fieldset>
@@ -128,7 +131,7 @@
             </div>
             <div id="content">
                 <div id="container">
-                    <h2>НА ФОКУС</h2>
+                    <h2>EDITOR'S PICK</h2>
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="item active">
@@ -223,6 +226,7 @@
                             </div>
                             <br>
                             <button id="search-but">Search</button>
+                            <br>
                         </form>
 
                         <div id="info-for-search">
@@ -281,10 +285,10 @@
             </div>
             <div class="footer-copyright ">
                 <ul>
-                    <li><a href="# ">Terms of Use</a></li>
-                    <li><a href="# ">Feedback</a></li>
+                    <li><a id="terms-of-use" href="">Terms of Use</a></li>
+                    <li><a id="feedback" href="">Feedback</a></li>
                     <li><a target="_blank" href="http://reklama.investor.bg/bg/id-300/%D0%A6%D0%B5%D0%BD%D0%B8.html">About our Ads</a></li>
-                    <li><a href="# ">Privacy</a></li>
+                    <li><a id="privacy" href="">Privacy</a></li>
                     <li><a target="_blank" href="https://www.google.bg/maps/place/%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F+%D0%9C%D0%BE%D0%BB/@42.6642016,23.2873957,17z/data=!4m5!3m4!1s0x40aa8494f088ea39:0x1f7afd1f0e07f9b2!8m2!3d42.6643476!4d23.289005">Location</a></li>
                 </ul>
             </div>

@@ -14,12 +14,15 @@ $(function () {
             event.preventDefault();
             var username = $('#username').val();
             var password = $('#password').val();
-            if (userList.login(username, password)) {
+            var user = userList.login(username, password);
+            if (user) {
                 $('#vhod').css('display', 'none');
                 $('#sign-in').css('display', 'none');
                 $('#sign-up').css('display', 'none');
                 $('#reg').css('display', 'none');
-                $('#userIn').text('Вие сте логнат като:"' + username + '"');
+                $('#userIn').css('display', 'block');
+                $('#userIn').text('Welcome! "' + user.username + '"');
+                $('#userPicture').attr('src', user.picture);
             } else {
                 $('#error').css('display', 'block');
                 $('#username').val('');
@@ -41,7 +44,8 @@ $(function () {
             var password = $('#password1').val();
             var repeatPassword = $('#repPass').val();
             var email = $('#email').val();
-            if (userList.addUser(username, password, repeatPassword, email)) {
+            var picture = $('#picture').val();
+            if (userList.addUser(username, password, repeatPassword, email, picture)) {
                 $('#formVhod').css('margin', 'auto');
                 $('#sign-up').css('display', 'none');
                 $('#sign-in').css({ display: 'block', position: 'fixed', margin: 'auto', zIndex: 1000, width: 300, top: 140, left: 498 });
