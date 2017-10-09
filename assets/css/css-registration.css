@@ -8,6 +8,9 @@
 
 #sign-up {
     display: none;
+    position: absolute;
+    z-index: 1000;
+    width: 30%;
 }
 
 fieldset {
@@ -32,11 +35,8 @@ fieldset {
 label {
     float: left;
     margin-left: 33px;
-    margin-bottom: 0px;
 }
-#picture{
-    width: 80%;
-}
+
 #email {
     width: 80%;
 }
@@ -47,12 +47,6 @@ label {
     display: block;
     margin: auto;
     width: 80%;
-}
-
-#sign-up {
-    margin: auto;
-    width: 350px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 #submit {

@@ -2,10 +2,10 @@ $(function () {
     $('#vhod').on('click', function () {
         $('#formVhod').css('margin', 'auto');
         $('#sign-up').css('display', 'none');
-        $('#sign-in').css({ display: 'block', position: 'fixed', margin: 'auto', zIndex: 1000, width: 350, top: 140, left: 498 });
+        $('#sign-in').css({ display: 'block'});
         $('#new-reg').on('click', function () {
             $('#sign-in').css('display', 'none');
-            $('#sign-up').css({ display: 'block', position: 'fixed', margin: 'auto', zIndex: 1000, width: 350, top: 140, left: 498 });
+            $('#sign-up').css({ display: 'block'});
             $('#close1').on('click', function () {
                 $('#sign-up').css('display', 'none');
             });
@@ -37,7 +37,7 @@ $(function () {
     $('#reg').on('click', function () {
         $('#formVhod').css('margin', 'auto');
         $('#sign-in').css('display', 'none');
-        $('#sign-up').css({ display: 'block', position: 'fixed', margin: 'auto', zIndex: 1000, width: 350, top: 140, left: 498 });
+        $('#sign-up').css({ display: 'block'});
         $('#subReg').on('click', function (event) {
             event.preventDefault();
             var username = $('#username1').val();
@@ -48,7 +48,7 @@ $(function () {
             if (userList.addUser(username, password, repeatPassword, email, picture)) {
                 $('#formVhod').css('margin', 'auto');
                 $('#sign-up').css('display', 'none');
-                $('#sign-in').css({ display: 'block', position: 'fixed', margin: 'auto', zIndex: 1000, width: 300, top: 140, left: 498 });
+                $('#sign-in').css({ display: 'block'});
                 $('#close').on('click', function () {
                     $('#sign-in').css('display', 'none');
                 })
